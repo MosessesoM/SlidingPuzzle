@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CoopGameController">
+    <children>
+        <AnchorPane fx:id="statisticsAnchorPane" layoutX="32.0" layoutY="29.0" prefHeight="310.0" prefWidth="194.0" style="-fx-border-color: black;">
+            <children>
+                <Label layoutX="45.0" layoutY="146.0" text="Statystyki rozgrywki" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="gamefieldAnchorPane" layoutX="260.0" layoutY="29.0" prefHeight="310.0" prefWidth="309.0" style="-fx-border-color: black;">
+            <children>
+                <Label layoutX="133.0" layoutY="146.0" text="Pole gry" />
+            </children>
+        </AnchorPane>
+        <Button fx:id="exitButton" alignment="BOTTOM_LEFT" layoutX="12.0" layoutY="360.0" mnemonicParsing="false" onAction="#exitButtonOnAction" text="EXIT" />
+    </children>
+</AnchorPane>

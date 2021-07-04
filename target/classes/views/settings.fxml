@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsController">
+    <children>
+        <AnchorPane layoutX="200.0" layoutY="113.0" prefHeight="174.0" prefWidth="200.0" style="-fx-border-color: black;">
+            <children>
+                <Button fx:id="backButton" layoutX="74.0" layoutY="120.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="54.0" text="Back" />
+                <Button fx:id="logoutButton" layoutX="74.0" layoutY="27.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" text="Logout" />
+            <Button fx:id="exitButton" layoutX="74.0" layoutY="74.0" mnemonicParsing="false" onAction="#exitButtonOnAction" prefHeight="26.0" prefWidth="54.0" text="Exit" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
