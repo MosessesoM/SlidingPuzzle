@@ -1,0 +1,13 @@
+
+u	java:S116"TRename this field "game_mode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤‡†°ûÿÿÿÿ8€Á’¹/
+N
+java:S1172"2Remove this unused method parameter "actionEvent".(–»²
+8Ñºš¹/
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùùíŠ8›Ãœ¹/
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùùíŠ8›Ãœ¹/
+}
+java:S1104"[Make playagainButton a static final constant or non-public and provide accessors if needed.(ÍÛë«ûÿÿÿÿ8ò¿·¹/
+x
+java:S1104"VMake exitButton a static final constant or non-public and provide accessors if needed.(òıÌÏùÿÿÿÿ8À¥·¹/
+T
+java:S1172"2Remove this unused method parameter "actionEvent".(”îøÏÿÿÿÿÿ8œ”‚¹/
