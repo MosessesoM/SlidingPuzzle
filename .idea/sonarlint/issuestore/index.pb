@@ -87,3 +87,9 @@ _
 /src/main/java/controllers/VsGameController.java,b\6\b6939fe0f13b5e0dfe3ab82f9267929957301910
 `
 0src/main/java/controllers/EndGameController.java,2\5\2551cdf4777a3dbb952e533f3a7b69e8578e83c7
+V
+&target/classes/views/confirmation.fxml,1\b\1b1ce159ce8db1c6dfe12966723f92060ed94599
+U
+%src/main/resources/views/endgame.fxml,7\1\71e1ab02077918e9e73deaf79dc87d5c1bd40708
+Q
+!target/classes/views/endgame.fxml,d\d\dd1529a6a3800f29b13903b4d75dceee1fee40aa

@@ -1,19 +1,25 @@
 package controllers;
 
 import command.GoToMenuCommand;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.Duration;
 
 import java.io.Console;
 import java.io.IOException;
+import java.time.zone.ZoneOffsetTransitionRule;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,27 +63,63 @@ public class SoloGameController extends Controller {
     @FXML
     public GridPane gridPane;
 
-    public int[][] end= {{0,0},{0,1},{0,2},{1,0},{1,1},{1,2},{2,0},{2,1}};
+    @FXML
+    public TextField numberofmovesTextFIeld;
 
-    public int[][] coordinates = new int[end.length][2];
+    @FXML
+    public TextField gametimeTextField;
+
+    @FXML
+    public TextField buttonsinplaceTextField;
+
+    private final int[][] end = {{0, 0}, {0, 1}, {0, 2}, {1, 0}, {1, 1}, {1, 2}, {2, 0}, {2, 1}};
+
+    private int[][] coordinates;
+
+    private int numberofmoves;
+
+    private int time;
+
+    private int buttonsinplace;
 
     @FXML
     void initialize() {
-        int index=0;
+        coordinates = new int[end.length][2];
+        numberofmoves = 0;
+        time = 0;
+        buttonsinplace=0;
+
+        int index = 0;
         for (Node node : gridPane.getChildren()) {
             coordinates[index][0] = GridPane.getRowIndex(node) != null ? GridPane.getRowIndex(node) : 0;
             coordinates[index][1] = GridPane.getColumnIndex(node) != null ? GridPane.getColumnIndex(node) : 0;
             index++;
         }
+        numberofmovesTextFIeld.setText(String.valueOf(numberofmoves));
+        gametimeTextField.setText(String.valueOf(time/60)+":"+ time / 10 + time % 10);
+        buttonsinplaceTextField.setText(String.valueOf(buttonsinplace));
+        time++;
+
+        Timeline timer = new Timeline(
+                new KeyFrame(Duration.seconds(1),
+                        new EventHandler<>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                gametimeTextField.setText(String.valueOf(time/60)+":"+ (time / 10) %6 + time % 10);
+                                time++;
+                            }
+                        }
+                ));
+        timer.setCycleCount(Timeline.INDEFINITE);
+        timer.play();
+
         randomStart(1000);
     }
 
-//    TODO: Pamiętać żeby dać zmienne wielkości zamiast sztywnych przy zmianie rozmiarów
-    public void randomStart(int moves){
+    //    TODO: Pamiętać żeby dać zmienne wielkości zamiast sztywnych przy zmianie rozmiarów
+    public void randomStart(int moves) {
         Random random = new Random();
-//        ArrayList<int[]> numbers = new ArrayList<>();
-//        Button[] buttons = {button1,button2,button3,button4,button5,button6,button7,button8};
-        ArrayList<Button> buttons = new ArrayList<>(){
+        ArrayList<Button> buttons = new ArrayList<>() {
             {
                 add(button1);
                 add(button2);
@@ -91,18 +133,7 @@ public class SoloGameController extends Controller {
         };
         ArrayList<Button> copy = new ArrayList<>();
         copy.addAll(buttons);
-//        for (int i=0;i<end.length;i++){
-//            numbers.add(i,end[i]);
-//        }
-//        for (int i=0;i<buttons.length;i++){
-//            index=random.nextInt(numbers.size());
-//            GridPane.setColumnIndex(buttons[i], numbers.get(index)[0]);
-//            GridPane.setRowIndex(buttons[i],numbers.get(index)[1]);
-//            numbers.remove(index);
-//        }
-        while (moves>0) {
-            System.out.println(moves);
-            System.out.println(random.nextInt(copy.size()));
+        while (moves > 0) {
             Button button = copy.remove(random.nextInt(copy.size()));
             int column = GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0;
             int row = GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0;
@@ -185,29 +216,35 @@ public class SoloGameController extends Controller {
         }
         if (!check1) {
             GridPane.setRowIndex(button, row + 1);
+            numberofmoves++;
         } else if (!check2) {
             GridPane.setRowIndex(button, row - 1);
+            numberofmoves++;
         } else if (!check3) {
             GridPane.setColumnIndex(button, column + 1);
+            numberofmoves++;
         } else if (!check4) {
             GridPane.setColumnIndex(button, column - 1);
+            numberofmoves++;
         }
         for (Node node : gridPane.getChildren()) {
             coordinates[index][0] = GridPane.getRowIndex(node) != null ? GridPane.getRowIndex(node) : 0;
             coordinates[index][1] = GridPane.getColumnIndex(node) != null ? GridPane.getColumnIndex(node) : 0;
             index++;
         }
-        check1=true;
-        for (int i=0;i< coordinates.length;i++){
+        check1 = true;
+        buttonsinplace=0;
+        for (int i = 0; i < coordinates.length; i++) {
             if (end[i][0] != coordinates[i][0] || end[i][1] != coordinates[i][1]) {
                 check1 = false;
-                break;
+            }
+            if (end[i][0] == coordinates[i][0] && end[i][1] == coordinates[i][1]){
+                buttonsinplace++;
             }
         }
-        if (check1){
-            for (int[] coordinate : coordinates) {
-                System.out.println(coordinate[0] + "" + coordinate[1]);
-            }
+        numberofmovesTextFIeld.setText(String.valueOf(numberofmoves));
+        buttonsinplaceTextField.setText(String.valueOf(buttonsinplace));
+        if (check1) {
             win();
         }
     }

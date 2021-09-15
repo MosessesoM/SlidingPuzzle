@@ -1,32 +1,33 @@
 
-:
-java:S2119M"Save and re-use this "Random".(¼İÅf8¸Ó’±»/
-]	java:S125P"<This block of commented-out lines of code should be removed.(©ñ’ùÿÿÿÿ8¸Ó’±»/
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ß¢ÎÀ¹/
-L
-java:S1128"/Remove this unused import 'javafx.scene.Group'.(Ÿ°ô–8Ş¯Íÿ´/
-[	java:S106·"9Replace this use of System.out or System.err by a logger.(¼úüÿÿÿÿ8Íº ²»/
-Z	java:S106["9Replace this use of System.out or System.err by a logger.(‚èıïüÿÿÿÿ8È·¸±»/
+O
+java:S1135w"2Complete the task associated to this TODO comment.(£èÉ«8ùŠ¸´¼/
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8—ˆ¹´¼/
 p
-java:S3776ˆ"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(ûšø8¸Ó’±»/
-O
-java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Ã¨®¿¹/
-]	java:S125N"<This block of commented-out lines of code should be removed.(õÅåáşÿÿÿÿ8¸Ó’±»/
-l
-java:S1104<"OMake end a static final constant or non-public and provide accessors if needed.(¾í–à8‹Âü’º/
+java:S3776Á"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(ûšø8ùŠ¸´¼/
 L
-java:S1128"/Remove this unused import 'javafx.event.Event'.(ô”áñ8„·åˆ³/
-\
-java:S1128":Remove this unused import 'javafx.scene.input.MouseEvent'.(˜¬‹æÿÿÿÿÿ8ØÄšó·/
+java:S1128"/Remove this unused import 'javafx.event.Event'.(ô”áñ8—ˆ¹´¼/
+{
+java:S1171{"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ùŠ¸´¼/
+L
+java:S1128"/Remove this unused import 'javafx.scene.Group'.(Ÿ°ô–8—ˆ¹´¼/
+:
+java:S2119y"Save and re-use this "Random".(¼İÅf8ùŠ¸´¼/
 N
-java:S1128",Remove this unused import 'java.io.Console'.(æÅªıÿÿÿÿ8ıŠ´€µ/
-O
-java:S1135K"2Complete the task associated to this TODO comment.(£èÉ«8¸Ó’±»/
-t
-java:S3776L"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ìÓëŠøÿÿÿÿ8¸Ó’±»/
-t
-java:S1104>"WMake coordinates a static final constant or non-public and provide accessors if needed.(âƒÆï8‹Âü’º/
-U	java:S106Z"9Replace this use of System.out or System.err by a logger.(à‡¢8¸Ó’±»/
+java:S3599z",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8»¦‡´¼/
 Q
-java:S1128"4Remove this unused import 'command.GoToMenuCommand'.(á²é­8••§/
+java:S1128"4Remove this unused import 'command.GoToMenuCommand'.(á²é­8—ˆ¹´¼/
+N
+java:S1128",Remove this unused import 'java.io.Console'.(æÅªıÿÿÿÿ8—ˆ¹´¼/
+\
+java:S1128":Remove this unused import 'javafx.scene.input.MouseEvent'.(˜¬‹æÿÿÿÿÿ8—ˆ¹´¼/
+a
+java:S1128"DRemove this unused import 'java.time.zone.ZoneOffsetTransitionRule'.(ÚœÌô8—ˆ¹´¼/
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8—ˆ¹´¼/
+t
+java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ìÓëŠøÿÿÿÿ8ùŠ¸´¼/
+E
+java:S1604i"(Make this anonymous inner class a lambda(ÈŸİ8šÈ´¼/
+b
+java:S3252q"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Ò™ˆû8§Ç´¼/
