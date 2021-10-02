@@ -1,14 +1,16 @@
 package controllers;
 
+import database.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.util.concurrent.RecursiveTask;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 public class Main extends Application {
 
@@ -28,6 +30,24 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("/views/main.fxml"));
         AnchorPane anchorPane = loader.load();
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction entityTransaction=entityManager.getTransaction();
+
+//        entityManager.getTransaction().begin();
+//
+//        User user = new User();
+//        user.setEmail("rafal.godlewski.98@gmail.com");
+//        user.setName("admin");
+//        user.setPassword("haslo");
+//        user.setPermission(true);
+//
+//        entityManager.persist(user);
+//
+//        entityManager.getTransaction().commit();
+//        entityManager.close();
+//        entityManagerFactory.close();
 
         Scene scene = new Scene(anchorPane,1024,600);
         primaryStage.setScene(scene);

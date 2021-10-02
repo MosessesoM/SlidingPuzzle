@@ -93,3 +93,13 @@ U
 %src/main/resources/views/endgame.fxml,7\1\71e1ab02077918e9e73deaf79dc87d5c1bd40708
 Q
 !target/classes/views/endgame.fxml,d\d\dd1529a6a3800f29b13903b4d75dceee1fee40aa
+V
+&src/main/resources/views/sologame.fxml,7\4\742ca2cfe70cc9bb89a77ef14d0eee9e624f1a29
+W
+'src/main/java/models/database/User.java,3\5\3557f5ac6a5507b169e022876a693192c6d0ba6e
+Z
+*src/main/java/models/database/VsScore.java,b\9\b9025d6e4c7b4865c19d15502d842dc59f0faa82
+\
+,src/main/java/models/database/CoopScore.java,3\7\377824646ed4c88e9ecd990668231f61cf9d0ae6
+\
+,src/main/java/models/database/SoloScore.java,4\1\41c1abf6dd8dfeb2879e7098dcc75f575a0b777d

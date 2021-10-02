@@ -1,7 +1,10 @@
 
 U
 java:S1128"8Remove this unused import 'javafx.geometry.Rectangle2D'.(ÔÕîå8¶Ùò§/
-\
-java:S1128"?Remove this unused import 'java.util.concurrent.RecursiveTask'.(½æØï8¶Ùò§/
 R
 java:S1128"0Remove this unused import 'javafx.stage.Screen'.(Ç¬óøÿÿÿÿ8¶Ùò§/
+g
+java:S1854&"ERemove this useless assignment to local variable "entityTransaction".(¿¡Şµüÿÿÿÿ8“ÓÃìÂ/
+X	java:S125("<This block of commented-out lines of code should be removed.(áÅœÉ8œ”’ìÂ/
+X
+java:S1481&"6Remove this unused "entityTransaction" local variable.(¿¡Şµüÿÿÿÿ8“ÓÃìÂ/
