@@ -31,10 +31,6 @@ public class Main extends Application {
         loader.setLocation(this.getClass().getResource("/views/main.fxml"));
         AnchorPane anchorPane = loader.load();
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        EntityTransaction entityTransaction=entityManager.getTransaction();
-
 //        entityManager.getTransaction().begin();
 //
 //        User user = new User();

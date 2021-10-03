@@ -13,6 +13,8 @@
             <Label fx:id="passwordLabel" layoutX="99.0" layoutY="73.0" text="Password" />
             <PasswordField fx:id="passwordTextField" layoutX="31.0" layoutY="101.0" onAction="#passwordTextFieldOnAction" prefHeight="26.0" prefWidth="186.0" />
             <TextField fx:id="loginTextField" layoutX="31.0" layoutY="39.0" onAction="#loginTextFieldOnAction" prefHeight="26.0" prefWidth="185.0" />
+            <Label fx:id="passwordWarningLabel" layoutX="8.0" layoutY="73.0" textFill="RED" />
+            <Label fx:id="loginWarningLabel" layoutX="8.0" layoutY="14.0" textFill="RED" />
          </children>
       </AnchorPane>
       <Button fx:id="exitButton" alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#exitButtonOnAction" style="-fx-alignment: bottom-left;" text="EXIT" AnchorPane.bottomAnchor="14.399999999999999" AnchorPane.leftAnchor="14.0" />

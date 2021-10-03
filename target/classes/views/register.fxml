@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterController">
    <children>
       <AnchorPane layoutX="178.0" layoutY="69.0" prefHeight="262.0" prefWidth="243.0" style="-fx-border-color: black;">
@@ -18,6 +17,7 @@
             <PasswordField fx:id="confirmpasswordTextField" layoutX="74.0" layoutY="148.0" onAction="#confirmpasswordTextFieldOnAction" />
             <TextField fx:id="nameTextField" layoutX="74.0" layoutY="39.0" onAction="#nameTextFieldOnAction" />
             <TextField fx:id="emailTextField" layoutX="74.0" layoutY="75.0" onAction="#emailTextFieldOnAction" />
+            <Label fx:id="warningLabel" layoutX="24.0" layoutY="14.0" textFill="RED" />
          </children>
       </AnchorPane>
       <Button fx:id="settingButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#settingButtonOnAction" text="Settings" />

@@ -1,6 +1,8 @@
 package controllers;
 
 import command.GoToMenuCommand;
+import database.DatabaseGetters;
+import database.User;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,13 +47,29 @@ public class LoginController extends Controller {
     public Button exitButton;
 
     @FXML
+    public Label passwordWarningLabel;
+
+    @FXML
+    public Label loginWarningLabel;
+
+    @FXML
     void initialize(){
 
     }
 
     @FXML
     public void loginButtonOnAction(ActionEvent actionEvent) throws IOException {
-        new GoToMenuCommand(mainController).execute();
+        DatabaseGetters databaseGetters= new DatabaseGetters();
+        if (loginTextField.getText().equals("") || passwordTextField.getText().equals("")){
+            loginWarningLabel.setText("Wrong data");
+        }else {
+            User user = databaseGetters.getUser(loginTextField.getText(),passwordTextField.getText());
+            if (loginTextField.getText().equals(user.getName()) && passwordTextField.getText().equals(user.getPassword())) {
+                new GoToMenuCommand(mainController).execute();
+            } else {
+                loginTextField.setText("Wrong data");
+            }
+        }
     }
 
     @FXML

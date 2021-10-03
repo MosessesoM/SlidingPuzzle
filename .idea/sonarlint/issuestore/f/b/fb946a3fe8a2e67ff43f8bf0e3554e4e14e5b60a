@@ -1,10 +1,11 @@
 
-U
-java:S1128"8Remove this unused import 'javafx.geometry.Rectangle2D'.(ÔÕîå8¶Ùò§/
-R
-java:S1128"0Remove this unused import 'javafx.stage.Screen'.(Ç¬óøÿÿÿÿ8¶Ùò§/
-g
-java:S1854&"ERemove this useless assignment to local variable "entityTransaction".(¿¡Şµüÿÿÿÿ8“ÓÃìÂ/
-X	java:S125("<This block of commented-out lines of code should be removed.(áÅœÉ8œ”’ìÂ/
-X
-java:S1481&"6Remove this unused "entityTransaction" local variable.(¿¡Şµüÿÿÿÿ8“ÓÃìÂ/
+X	java:S125""<This block of commented-out lines of code should be removed.(áÅœÉ8…¬Œ‡Ä/
+\
+java:S1128":Remove this unused import 'javax.persistence.Persistence'.(›²ö¾ıÿÿÿÿ8Î€¦ŠÄ/
+`
+java:S1128"CRemove this unused import 'javax.persistence.EntityManagerFactory'.(îÜğ8Î€¦ŠÄ/
+b
+java:S1128"@Remove this unused import 'javax.persistence.EntityTransaction'.(¶“çğüÿÿÿÿ8Î€¦ŠÄ/
+^
+java:S1128
+"<Remove this unused import 'javax.persistence.EntityManager'.(ğàËÒıÿÿÿÿ8Î€¦ŠÄ/
