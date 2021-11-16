@@ -64,10 +64,14 @@ public class LoginController extends Controller {
             loginWarningLabel.setText("Wrong data");
         }else {
             User user = databaseGetters.getUser(loginTextField.getText(),passwordTextField.getText());
-            if (loginTextField.getText().equals(user.getName()) && passwordTextField.getText().equals(user.getPassword())) {
+            if (user==null)
+            {
+                loginWarningLabel.setText("Wrong data");
+            } else if (loginTextField.getText().equals(user.getName()) && passwordTextField.getText().equals(user.getPassword())) {
+                Main.getStage().setUserData(user);
                 new GoToMenuCommand(mainController).execute();
             } else {
-                loginTextField.setText("Wrong data");
+                loginWarningLabel.setText("Wrong data");
             }
         }
     }

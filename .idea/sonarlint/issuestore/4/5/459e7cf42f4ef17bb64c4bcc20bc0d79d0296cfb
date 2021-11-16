@@ -1,6 +1,6 @@
 
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹÷ø³ûÿÿÿÿ8Ş¶õ…Ä/
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñĞ÷›ûÿÿÿÿ8Ş¶õ…Ä/
-s	java:S116"WRename this field "SoloScore_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ƒÜÔ8õ…Ä/
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹÷ø³ûÿÿÿÿ8Ş¶õ…Ä/
 l	java:S116"PRename this field "Score" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÙØı8õ…Ä/
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñĞ÷›ûÿÿÿÿ8Ş¶õ…Ä/
+s	java:S116"WRename this field "SoloScore_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ƒÜÔ8õ…Ä/
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹÷ø³ûÿÿÿÿ8Ş¶õ…Ä/
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹÷ø³ûÿÿÿÿ8Ş¶õ…Ä/

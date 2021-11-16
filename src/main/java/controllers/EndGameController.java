@@ -2,21 +2,31 @@ package controllers;
 
 import command.GoToMenuCommand;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
 public class EndGameController extends Controller {
 
-    private String game_mode;
+    @FXML
+    public TextField scoreTextField;
 
-    public Button exitButton;
-    public Button playagainButton;
+    private GameController gameController;
 
-    public void setGame_mode(String game_mode){
-        this.game_mode=game_mode;
+    @FXML
+    void initialize() {
+    }
+
+    public void setGameController(GameController gameController) {
+        this.gameController = gameController;
+    }
+
+    public void setScoreTextField(){
+        scoreTextField.setText(String.valueOf(gameController.getScore()));
     }
 
     public void exitButtonOnAction(ActionEvent actionEvent) throws IOException {
@@ -25,22 +35,22 @@ public class EndGameController extends Controller {
 
     public void playagainButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        switch (game_mode) {
-            case "solo":
+        switch (gameController.getClass().getName()) {
+            case "controllers.SoloGameController":
                 loader.setLocation(this.getClass().getResource("/views/sologame.fxml"));
                 AnchorPane anchorPanesolo = loader.load();
                 SoloGameController soloGameController = loader.getController();
                 soloGameController.setMainController(mainController);
                 mainController.setScreen(anchorPanesolo);
                 break;
-            case "vs":
+            case "controllers.VsGameController":
                 loader.setLocation(this.getClass().getResource("/views/vsgame.fxml"));
                 AnchorPane anchorPanevs = loader.load();
                 VsGameController vsGameController = loader.getController();
                 vsGameController.setMainController(mainController);
                 mainController.setScreen(anchorPanevs);
                 break;
-            case "coop":
+            case "controllers.CoopGameController":
                 loader.setLocation(this.getClass().getResource("/views/coopgame.fxml"));
                 AnchorPane anchorPanecoop = loader.load();
                 CoopGameController coopGameController = loader.getController();

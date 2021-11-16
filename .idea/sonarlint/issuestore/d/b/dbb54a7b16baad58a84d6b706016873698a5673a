@@ -1,0 +1,23 @@
+
+U	java:S106F"9Replace this use of System.out or System.err by a logger.(ë©ØÏ8·§¢§Ò/
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Š²ŞÏøÿÿÿÿ8Æ÷’§Ò/
+E
+java:S1604 "(Make this anonymous inner class a lambda(ÜÊÚØ8ı«ôÑ/
+’
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Š²ŞÏøÿÿÿÿ8¿Ê¬§Ò/
+P
+java:S1135œ"2Complete the task associated to this TODO comment.(¢ß×…8ù¹‰§Ò/
+O
+java:S1135"2Complete the task associated to this TODO comment.(‹—çŞ8øÒôñÑ/
+H
+java:S1068
+"+Remove this unused "g_score" private field.(¸â’8û ÷óÑ/
+Y
+java:S1117{"7Rename "end" which hides the field declared at line 12.(ÈŞÓüøÿÿÿÿ8·ÛÍôÑ/
+H
+java:S1168G"+Return an empty collection instead of null.(¥¹ï8î›§Ò/
+n	java:S116
+"RRename this field "g_score" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸â’8ÊÖÑ‹Ë/
+U	java:S1060"9Replace this use of System.out or System.err by a logger.(«‚Ø±8Œ¾Ò§Ò/
+X	java:S125"<This block of commented-out lines of code should be removed.(Ğ‰¼â8àºâ§Ò/

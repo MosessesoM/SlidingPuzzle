@@ -1,6 +1,7 @@
 package database;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -8,6 +9,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "User_id")
     private long User_Id;
     @Column(columnDefinition = "BOOLEAN NOT NULL")
     private boolean Permission;
@@ -18,16 +20,13 @@ public class User {
     @Column(columnDefinition = "VARCHAR(30) NOT NUL")
     private String Password;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "User_Id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<SoloScore> soloScores;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "User_Id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<CoopScore> coopScores;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "User_Id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<VsScore> vsScores;
 
 

@@ -12,6 +12,18 @@ public class CoopScore {
     @Column(columnDefinition = "INT NOT NULL")
     private int Score;
 
+    @ManyToOne
+    @JoinColumn(name = "User_id",nullable = false)
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public long getCoopScore_Id() {
         return CoopScore_Id;
     }

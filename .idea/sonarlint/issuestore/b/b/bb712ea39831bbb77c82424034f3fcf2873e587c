@@ -1,33 +1,30 @@
 
-\
-java:S1128":Remove this unused import 'javafx.scene.input.MouseEvent'.(˜¬‹æÿÿÿÿÿ8—ˆ¹´¼/
-L
-java:S1128"/Remove this unused import 'javafx.scene.Group'.(Ÿ°ô–8—ˆ¹´¼/
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8—ˆ¹´¼/
-E
-java:S1604i"(Make this anonymous inner class a lambda(ÈŸİ8šÈ´¼/
-a
-java:S1128"DRemove this unused import 'java.time.zone.ZoneOffsetTransitionRule'.(ÚœÌô8—ˆ¹´¼/
+;
+java:S2119Œ"Save and re-use this "Random".(¼İÅf8ùŠ¸´¼/
+Y
+java:S1117¥";Rename "current" which hides the field declared at line 73.(ÏƒüÊ8ŠšËÑ/
+X	java:S125W"<This block of commented-out lines of code should be removed.(Ø‘îÊ8²àËÑ/
+c
+java:S3252€"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Ò™ˆû8§Ç´¼/
+P
+java:S1135Š"2Complete the task associated to this TODO comment.(£èÉ«8ùŠ¸´¼/
 O
-java:S1135w"2Complete the task associated to this TODO comment.(£èÉ«8ùŠ¸´¼/
-:
-java:S2119y"Save and re-use this "Random".(¼İÅf8ùŠ¸´¼/
-t
-java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ìÓëŠøÿÿÿÿ8ùŠ¸´¼/
-b
-java:S3252q"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Ò™ˆû8§Ç´¼/
-N
-java:S1128",Remove this unused import 'java.io.Console'.(æÅªıÿÿÿÿ8—ˆ¹´¼/
+java:S1135H"2Complete the task associated to this TODO comment.(‰‘œ³8ÂÿÈÑ/
+h
+java:S1128"FRemove this unused import 'javafx.scene.control.SingleSelectionModel'.(¾½ì¡ıÿÿÿÿ8ÌÉàªÎ/
 O
-java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8—ˆ¹´¼/
-Q
-java:S1128"4Remove this unused import 'command.GoToMenuCommand'.(á²é­8—ˆ¹´¼/
-N
-java:S3599z",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8»¦‡´¼/
-L
-java:S1128"/Remove this unused import 'javafx.event.Event'.(ô”áñ8—ˆ¹´¼/
-{
-java:S1171{"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ùŠ¸´¼/
+java:S3599",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8œ¯ÜÉÑ/
+u
+java:S3776‹"RRefactor this method to reduce its Cognitive Complexity from 40 to the 15 allowed.(ìÓëŠøÿÿÿÿ8ùŠ¸´¼/
+D	java:S131®""Add a default case to this switch.(ñ¦·‚şÿÿÿÿ8ŠšËÑ/
+[	java:S106”"9Replace this use of System.out or System.err by a logger.(ıÒÌáøÿÿÿÿ8ÖÎÇ§Ò/
+v
+java:S3776¤"SRefactor this method to reduce its Cognitive Complexity from 141 to the 15 allowed.(ìÙı”úÿÿÿÿ8ŠšËÑ/
+G
+java:S1068I"+Remove this unused "current" private field.(ÒîøI8îµßóÑ/
+|
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8œ¯ÜÉÑ/
 p
-java:S3776Á"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(ûšø8ùŠ¸´¼/
+java:S3776Õ"RRefactor this method to reduce its Cognitive Complexity from 39 to the 15 allowed.(ûšø8ùŠ¸´¼/
+E
+java:S1604x"(Make this anonymous inner class a lambda(ÈŸİ8šÈ´¼/

@@ -65,8 +65,6 @@ N
 target/classes/views/menu.fxml,7\3\73e11537e250c4468d7889dcb4230f917a019110
 R
 "target/classes/views/register.fxml,1\1\111e9a1cf4d13e27e7cd6fe0307b60244ab28e33
-X
-(src/main/resources/views/scoreboard.fxml,6\2\62b2d5925e3f50c950c9ccc4ed4d90998f31e3e2
 T
 $target/classes/views/scoreboard.fxml,c\f\cf1df5918c5f952ce37cdebdd405a291007bcaa6
 c
@@ -89,12 +87,8 @@ _
 0src/main/java/controllers/EndGameController.java,2\5\2551cdf4777a3dbb952e533f3a7b69e8578e83c7
 V
 &target/classes/views/confirmation.fxml,1\b\1b1ce159ce8db1c6dfe12966723f92060ed94599
-U
-%src/main/resources/views/endgame.fxml,7\1\71e1ab02077918e9e73deaf79dc87d5c1bd40708
 Q
 !target/classes/views/endgame.fxml,d\d\dd1529a6a3800f29b13903b4d75dceee1fee40aa
-V
-&src/main/resources/views/sologame.fxml,7\4\742ca2cfe70cc9bb89a77ef14d0eee9e624f1a29
 U
 %src/main/java/database/CoopScore.java,1\4\1423200bfffa8e54cbaef1bfa88ec3337eebebd0
 \
@@ -153,3 +147,11 @@ S
 +src/main/java/database/DatabaseSetters.java,0\2\0209f982bd248230dfbd36c5d03f95ed11e3d292
 [
 +src/main/java/database/DatabaseGetters.java,e\9\e98e61f9630bff46f70fc01acc7144deb837e562
+S
+#src/main/resources/views/login.fxml,6\3\630252cd99e17cc56ecaba22c4f27d057eccc04e
+V
+&src/main/resources/views/register.fxml,b\9\b9a5361991656f336ecd5b97710ec4dd0b9427fd
+]
+-src/main/java/controllers/GameController.java,6\7\671814fb737eb0b39e0fd059b7a0194fca2d571f
+U
+%src/main/java/aialgorithms/AStar.java,d\b\dbb54a7b16baad58a84d6b706016873698a5673a

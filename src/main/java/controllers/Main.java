@@ -16,16 +16,16 @@ public class Main extends Application {
 
     private static Stage stage;
 
-    public static Stage getStage(){
+    public static Stage getStage() {
         return stage;
     }
 
-    public static void setStage(Stage stage){
+    public static void setStage(Stage stage) {
         Main.stage = stage;
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         setStage(primaryStage);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("/views/main.fxml"));
@@ -45,7 +45,7 @@ public class Main extends Application {
 //        entityManager.close();
 //        entityManagerFactory.close();
 
-        Scene scene = new Scene(anchorPane,1024,600);
+        Scene scene = new Scene(anchorPane, 1024, 600);
         primaryStage.setScene(scene);
         primaryStage.setMaximized(true);
         primaryStage.setTitle("Sliding Puzzle");
