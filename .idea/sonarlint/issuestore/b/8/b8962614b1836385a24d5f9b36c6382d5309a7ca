@@ -1,11 +1,11 @@
 
-r	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÖÊ†ÿÿÿÿÿ8ëÆô„Ä/
-p	java:S116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬­Áøÿÿÿÿ8–¥êŠÂ/
 M
 java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÈªçÔÇ/
+t	java:S116"SRename this field "Password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬›™Âûÿÿÿÿ8ƒùó‹Â/
 s	java:S116"RRename this field "User_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©³Èæÿÿÿÿÿ8¨†ŽŒÂ/
+o	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«“Á‹üÿÿÿÿ8ëÆô„Ä/
+r	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÖÊ†ÿÿÿÿÿ8ëÆô„Ä/
+p	java:S116"ORename this field "Name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬­Áøÿÿÿÿ8–¥êŠÂ/
 o	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÖÊ†ÿÿÿÿÿ8ëÆô„Ä/
 l	java:S116"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áï»‚8—ËìŠÂ/
 v	java:S116"URename this field "Permission" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íäÛ×øÿÿÿÿ8­‚õ‹Â/
-t	java:S116"SRename this field "Password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬›™Âûÿÿÿÿ8ƒùó‹Â/
-o	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«“Á‹üÿÿÿÿ8ëÆô„Ä/

@@ -4,20 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class AStar {
+public class AStar implements Algorithm {
 
-//    TODO: trzeba wybierać najniższą wartość f ze wszytkich mozliwych pójść i dodawaj je do listy
+    private ArrayList<BoardState> pastStates = new ArrayList<>();
 
-    private int g_score=0;
-
-    private final int[][] end = {{1, 2, 3}, {4, 5, 6}, {7, 8, -1}};
-
-    private ArrayList<StateNode> pastStates = new ArrayList<>();
-
-    private ArrayList<StateNode> availableStates = new ArrayList<>();
+    private ArrayList<BoardState> availableStates = new ArrayList<>();
 
     public AStar(int[][] start) {
-        StateNode startNode = new StateNode(start);
+        BoardState startNode = new BoardState(start);
         startNode.setgScore(0);
         startNode.sethScore();
         startNode.setfScore();
@@ -26,34 +20,34 @@ public class AStar {
         availableStates.add(startNode);
     }
 
-    public ArrayList<StateNode> findiSolution() throws IOException {
-        StateNode present;
-        while (!availableStates.isEmpty()){
-            availableStates.sort(new Comparator<StateNode>() {
+    public ArrayList<BoardState> findSolution() {
+        BoardState present;
+        while (!availableStates.isEmpty()) {
+            availableStates.sort(new Comparator<BoardState>() {
                 @Override
-                public int compare(StateNode o1, StateNode o2) {
-                    return Integer.compare(o1.getfScore(),o2.getfScore());
+                public int compare(BoardState o1, BoardState o2) {
+                    return Integer.compare(o1.getfScore(), o2.getfScore());
                 }
             });
-            present=availableStates.get(0);
-            if (checkFinalState(present)){
-                ArrayList<StateNode> solution = new ArrayList<>();
-                while (present.getParentIndex()!=-1){
+            present = availableStates.get(0);
+            if (checkFinalState(present)) {
+                ArrayList<BoardState> solution = new ArrayList<>();
+                while (present.getParentIndex() != -1) {
                     solution.add(present);
-                    present=pastStates.get(present.getParentIndex());
+                    present = pastStates.get(present.getParentIndex());
                 }
                 solution.add(present);
                 return solution;
             }
-            ArrayList<StateNode> successors = expansion(present);
+            ArrayList<BoardState> successors = expansion(present);
             pastStates.add(present);
-            for (StateNode successor:successors){
-                if (pastStates.contains(successor)){
+            for (BoardState successor : successors) {
+                if (pastStates.contains(successor)) {
                     successor.setgScore(present.getgScore());
                     successor.sethScore();
                     successor.setfScore();
                     successor.setParentIndex(pastStates.indexOf(present));
-                    if (pastStates.get(pastStates.indexOf(successor)).getgScore()>successor.getgScore()){
+                    if (pastStates.get(pastStates.indexOf(successor)).getgScore() > successor.getgScore()) {
                         pastStates.get(pastStates.indexOf(successor)).setgScore(successor.getgScore());
                         availableStates.add(successor);
                     }
@@ -71,138 +65,72 @@ public class AStar {
         return null;
     }
 
-    private ArrayList<StateNode> expansion(StateNode present){
-        ArrayList<StateNode> successors = new ArrayList<>();
+    public ArrayList<BoardState> expansion(BoardState present) {
+        ArrayList<BoardState> successors = new ArrayList<>();
         int[][] state = present.getState();
         int[][] successor = new int[3][3];
-        int row=-1;
-        int column=-1;
-        for (int i=0;i<3;i++){
-            for (int j=0;j<3;j++){
-                if (state[i][j]==-1){
-                    row=i;
-                    column=j;
+        int row = -1;
+        int column = -1;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (state[i][j] == -1) {
+                    row = i;
+                    column = j;
                     break;
                 }
             }
-            if (row!=-1){
+            if (row != -1) {
                 break;
             }
         }
-        if (row+1<3){
-            for (int i=0;i<3;i++){
-                successor[i]=state[i].clone();
+        if (row + 1 < 3) {
+            for (int i = 0; i < 3; i++) {
+                successor[i] = state[i].clone();
             }
-            successor[row][column]=state[row+1][column];
-            successor[row+1][column]=state[row][column];
-            StateNode stateNode = new StateNode(successor);
-            successors.add(stateNode);
+            successor[row][column] = state[row + 1][column];
+            successor[row + 1][column] = state[row][column];
+            BoardState boardState = new BoardState(successor);
+            successors.add(boardState);
         }
-        if (row-1>-1){
-            for (int i=0;i<3;i++){
-                successor[i]=state[i].clone();
+        if (row - 1 > -1) {
+            for (int i = 0; i < 3; i++) {
+                successor[i] = state[i].clone();
             }
-            successor[row][column]=state[row-1][column];
-            successor[row-1][column]=state[row][column];
-            StateNode stateNode = new StateNode(successor);
-            successors.add(stateNode);
+            successor[row][column] = state[row - 1][column];
+            successor[row - 1][column] = state[row][column];
+            BoardState boardState = new BoardState(successor);
+            successors.add(boardState);
         }
-        if (column+1<3){
-            for (int i=0;i<3;i++){
-                successor[i]=state[i].clone();
+        if (column + 1 < 3) {
+            for (int i = 0; i < 3; i++) {
+                successor[i] = state[i].clone();
             }
-            successor[row][column]=state[row][column+1];
-            successor[row][column+1]=state[row][column];
-            StateNode stateNode = new StateNode(successor);
-            successors.add(stateNode);
+            successor[row][column] = state[row][column + 1];
+            successor[row][column + 1] = state[row][column];
+            BoardState boardState = new BoardState(successor);
+            successors.add(boardState);
         }
-        if (column-1>-1){
-            for (int i=0;i<3;i++){
-                successor[i]=state[i].clone();
+        if (column - 1 > -1) {
+            for (int i = 0; i < 3; i++) {
+                successor[i] = state[i].clone();
             }
-            successor[row][column]=state[row][column-1];
-            successor[row][column-1]=state[row][column];
-            StateNode stateNode = new StateNode(successor);
-            successors.add(stateNode);
+            successor[row][column] = state[row][column - 1];
+            successor[row][column - 1] = state[row][column];
+            BoardState boardState = new BoardState(successor);
+            successors.add(boardState);
         }
         return successors;
     }
 
-    private boolean checkFinalState(StateNode n){
+    public boolean checkFinalState(BoardState n) {
         int[][] end = {{1, 2, 3}, {4, 5, 6}, {7, 8, -1}};
-        for (int i=0;i<3;i++){
-            for (int j=0;j<3;j++){
-                if (end[i][j]!=n.getState()[i][j]){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (end[i][j] != n.getState()[i][j]) {
                     return false;
                 }
             }
         }
         return true;
-    }
-
-
-    public class StateNode {
-        private int gScore;
-
-        private int hScore =8;
-
-        private int fScore;
-
-        private int[][] state=new int[3][3];
-
-        private int parentIndex;
-
-        public StateNode(int[][] state){
-            setState(state);
-        }
-
-        public int getgScore() {
-            return gScore;
-        }
-
-        public void setgScore(int gScore) {
-            this.gScore = gScore+1;
-//            TODO: Jakoś zapisywać głebokość
-        }
-
-        public int gethScore() {
-            return hScore;
-        }
-
-        public void sethScore() {
-            for (int i=0;i<3;i++){
-                for (int j=0;j<3;j++){
-                    if (state[i][j] == end[i][j] && state[i][j]!=-1) {
-                        hScore--;
-                    }
-                }
-            }
-        }
-
-        public int getfScore() {
-            return fScore;
-        }
-
-        public void setfScore() {
-            this.fScore = hScore + gScore;
-        }
-
-        public int[][] getState() {
-            return state;
-        }
-
-        public void setState(int[][] state) {
-            for (int i=0;i<3;i++){
-                    this.state[i]=state[i].clone();
-            }
-        }
-
-        public int getParentIndex() {
-            return parentIndex;
-        }
-
-        public void setParentIndex(int parentIndex) {
-            this.parentIndex = parentIndex;
-        }
     }
 }

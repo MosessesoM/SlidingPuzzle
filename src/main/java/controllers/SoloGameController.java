@@ -1,6 +1,8 @@
 package controllers;
 
 import aialgorithms.AStar;
+import aialgorithms.BoardState;
+import aialgorithms.Genetic;
 import database.DatabaseSetters;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -10,7 +12,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -74,6 +75,8 @@ public class SoloGameController extends Controller implements GameController {
 
     private AStar aStar;
 
+    private Genetic genetic;
+
     private int[][] coordinates;
 
     private int numberofmoves;
@@ -129,8 +132,19 @@ public class SoloGameController extends Controller implements GameController {
         timer.play();
 
         randomStart(10);
-        ArrayList<AStar.StateNode> solution = aStar.findiSolution();
-        for (AStar.StateNode node : solution){
+
+//      To jest wypisywanie rozwiązania z a*
+//        ArrayList<BoardState> solution = aStar.findSolution();
+//        for (BoardState node : solution){
+//            for (int i=0;i<3;i++){
+//                System.out.println(node.getState()[i][0] +" "+node.getState()[i][1]+" "+node.getState()[i][2]);
+//            }
+//            System.out.println("-------------------------------");
+//        }
+
+//        To jest wypisywanie rozwiązania z genetycznego
+        ArrayList<BoardState> solution = genetic.findSolution();
+        for (BoardState node : solution){
             for (int i=0;i<3;i++){
                 System.out.println(node.getState()[i][0] +" "+node.getState()[i][1]+" "+node.getState()[i][2]);
             }
@@ -214,6 +228,7 @@ public class SoloGameController extends Controller implements GameController {
             }
         }
         aStar=new AStar(convert(buttons));
+        genetic=new Genetic(convert(buttons));
     }
 
     @FXML

@@ -155,3 +155,11 @@ V
 -src/main/java/controllers/GameController.java,6\7\671814fb737eb0b39e0fd059b7a0194fca2d571f
 U
 %src/main/java/aialgorithms/AStar.java,d\b\dbb54a7b16baad58a84d6b706016873698a5673a
+U
+%src/main/resources/views/endgame.fxml,7\1\71e1ab02077918e9e73deaf79dc87d5c1bd40708
+Z
+*src/main/java/aialgorithms/BoardState.java,5\1\5121497d1b15139486c46e91c7b5d6494ffc5d03
+Y
+)src/main/java/aialgorithms/Algorithm.java,a\0\a0499a4b687871b226a2e56c081c456d526f2d77
+W
+'src/main/java/aialgorithms/Genetic.java,3\c\3cbf9bfa086eb2464c28c6cef7fa43d256ec37d1
