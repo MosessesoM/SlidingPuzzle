@@ -1,0 +1,10 @@
+
+M
+java:S1172 "2Remove this unused method parameter "actionEvent".(”îøÏÿÿÿÿÿ
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷‹¾†ÿÿÿÿÿ
+G
+java:S1172$"2Remove this unused method parameter "actionEvent".(–»²
+
+S
+java:S1128"8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ
