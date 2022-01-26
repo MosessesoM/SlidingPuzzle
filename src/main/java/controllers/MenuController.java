@@ -33,10 +33,9 @@ public class MenuController extends Controller {
     @FXML
     public void solomodeButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/views/gamesettings.fxml"));
+        loader.setLocation(this.getClass().getResource("/views/vsgamesettings.fxml"));
         AnchorPane anchorPane = loader.load();
-        GameSettingsController gameSettingController = loader.getController();
-        gameSettingController.setGame_mode("solo");
+        VsGameSettingsController gameSettingController = loader.getController();
         gameSettingController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
@@ -44,10 +43,9 @@ public class MenuController extends Controller {
     @FXML
     public void versusmodeButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/views/gamesettings.fxml"));
+        loader.setLocation(this.getClass().getResource("/views/vsgamesettings.fxml"));
         AnchorPane anchorPane = loader.load();
-        GameSettingsController gameSettingController = loader.getController();
-        gameSettingController.setGame_mode("vs");
+        VsGameSettingsController gameSettingController = loader.getController();
         gameSettingController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
@@ -55,10 +53,9 @@ public class MenuController extends Controller {
     @FXML
     public void coopmodeButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/views/gamesettings.fxml"));
+        loader.setLocation(this.getClass().getResource("/views/vsgamesettings.fxml"));
         AnchorPane anchorPane = loader.load();
-        GameSettingsController gameSettingController = loader.getController();
-        gameSettingController.setGame_mode("coop");
+        VsGameSettingsController gameSettingController = loader.getController();
         gameSettingController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }

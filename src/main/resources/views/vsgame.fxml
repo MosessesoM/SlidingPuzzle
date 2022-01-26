@@ -5,16 +5,62 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VsGameController">
     <children>
-        <AnchorPane fx:id="sigamefieldAnchorPane" layoutX="14.0" layoutY="29.0" prefHeight="280.0" prefWidth="280.0" style="-fx-border-color: black;">
-            <children>
-                <Label layoutX="112.0" layoutY="131.0" text="Pole gry SI" />
-            </children>
-        </AnchorPane>
-        <AnchorPane fx:id="playergamefieldAnchorPane" layoutX="305.0" layoutY="29.0" prefHeight="280.0" prefWidth="280.0" style="-fx-border-color: black;">
-            <children>
-                <Label layoutX="99.0" layoutY="131.0" text="Pole gry gracza" />
-            </children>
-        </AnchorPane>
         <Button fx:id="exitButton" layoutX="12.0" layoutY="360.0" mnemonicParsing="false" onAction="#exitButtonOnAction" text="EXIT" />
+        <GridPane fx:id="gridPane1" layoutX="32.0" layoutY="34.0" prefHeight="259.0" prefWidth="255.0" style="-fx-border-color: black;">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="button1" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="119.0" prefWidth="103.0" text="1" />
+                <Button fx:id="button2" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="146.0" prefWidth="118.0" text="2" GridPane.columnIndex="1" />
+                <Button fx:id="button3" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="178.0" prefWidth="174.0" text="3" GridPane.columnIndex="2" />
+                <Button fx:id="button4" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="166.0" prefWidth="156.0" text="4" GridPane.rowIndex="1" />
+                <Button fx:id="button5" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="181.0" prefWidth="138.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button fx:id="button6" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="173.0" prefWidth="139.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Button fx:id="button7" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="201.0" prefWidth="151.0" text="7" GridPane.rowIndex="2" />
+                <Button fx:id="button8" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="213.0" prefWidth="172.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+      <GridPane fx:id="gridPane2" layoutX="310.0" layoutY="34.0" prefHeight="259.0" prefWidth="255.0" style="-fx-border-color: black;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="button11" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="119.0" prefWidth="103.0" text="1" />
+            <Button fx:id="button21" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="146.0" prefWidth="118.0" text="2" GridPane.columnIndex="1" />
+            <Button fx:id="button31" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="178.0" prefWidth="174.0" text="3" GridPane.columnIndex="2" />
+            <Button fx:id="button41" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="166.0" prefWidth="156.0" text="4" GridPane.rowIndex="1" />
+            <Button fx:id="button51" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="181.0" prefWidth="138.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="button61" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="173.0" prefWidth="139.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="button71" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="201.0" prefWidth="151.0" text="7" GridPane.rowIndex="2" />
+            <Button fx:id="button81" mnemonicParsing="false" onAction="#buttonOnAction" prefHeight="213.0" prefWidth="172.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <AnchorPane layoutX="74.0" layoutY="306.0" prefHeight="79.0" prefWidth="451.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="201.0" layoutY="5.0" text="Statistics:" />
+            <Label layoutX="40.0" layoutY="23.0" text="Number of moves" />
+            <Label layoutX="196.0" layoutY="23.0" text="Game time" />
+            <Label layoutX="268.0" layoutY="23.0" prefWidth="169.0" text="Number of tiles in the rigt place" />
+            <TextField fx:id="numberofmovesTextFIeld" layoutX="74.0" layoutY="40.0" prefHeight="26.0" prefWidth="28.0" />
+            <TextField fx:id="gametimeTextField" layoutX="201.0" layoutY="40.0" prefHeight="26.0" prefWidth="50.0" />
+            <TextField fx:id="buttonsinplaceTextField" layoutX="338.0" layoutY="40.0" prefHeight="26.0" prefWidth="28.0" />
+         </children></AnchorPane>
+      <Label fx:id="board1Label" layoutX="130.0" layoutY="14.0" text="Your Board" />
+      <Label fx:id="board2Label" layoutX="394.0" layoutY="14.0" text="Computer Board" />
     </children>
 </AnchorPane>

@@ -70,13 +70,6 @@ public class SoloGameController extends Controller implements GameController {
 
     private final int[][] end = {{0, 0}, {0, 1}, {0, 2}, {1, 0}, {1, 1}, {1, 2}, {2, 0}, {2, 1}};
 
-    //    TODO: do wywalenia, tylko testy
-    private int[][] current;
-
-    private AStar aStar;
-
-    private Genetic genetic;
-
     private int[][] coordinates;
 
     private int numberofmoves;
@@ -86,19 +79,6 @@ public class SoloGameController extends Controller implements GameController {
     private int buttonsinplace;
 
     private int score;
-
-//    private ArrayList<Button> buttons = new ArrayList<>() {
-//        {
-//            add(button1);
-//            add(button2);
-//            add(button3);
-//            add(button4);
-//            add(button5);
-//            add(button6);
-//            add(button7);
-//            add(button8);
-//        }
-//    };
 
     @FXML
     void initialize() throws IOException {
@@ -130,26 +110,6 @@ public class SoloGameController extends Controller implements GameController {
                 ));
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();
-
-        randomStart(10);
-
-//      To jest wypisywanie rozwiązania z a*
-//        ArrayList<BoardState> solution = aStar.findSolution();
-//        for (BoardState node : solution){
-//            for (int i=0;i<3;i++){
-//                System.out.println(node.getState()[i][0] +" "+node.getState()[i][1]+" "+node.getState()[i][2]);
-//            }
-//            System.out.println("-------------------------------");
-//        }
-
-//        To jest wypisywanie rozwiązania z genetycznego
-        ArrayList<BoardState> solution = genetic.findSolution();
-        for (BoardState node : solution){
-            for (int i=0;i<3;i++){
-                System.out.println(node.getState()[i][0] +" "+node.getState()[i][1]+" "+node.getState()[i][2]);
-            }
-            System.out.println("-------------------------------");
-        }
     }
 
     public int getScore() {
@@ -159,6 +119,7 @@ public class SoloGameController extends Controller implements GameController {
     //    TODO: Pamiętać żeby dać zmienne wielkości zamiast sztywnych przy zmianie rozmiarów
     public void randomStart(int moves) {
         Random random = new Random();
+
         ArrayList<Button> buttons = new ArrayList<>() {
             {
                 add(button1);
@@ -173,6 +134,9 @@ public class SoloGameController extends Controller implements GameController {
         };
         ArrayList<Button> copy = new ArrayList<>();
         copy.addAll(buttons);
+
+        ArrayList<int[][]> coordArrayList = new ArrayList<>();
+
         while (moves > 0) {
             Button button = copy.remove(random.nextInt(copy.size()));
             int column = GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0;
@@ -195,6 +159,8 @@ public class SoloGameController extends Controller implements GameController {
                     check4 = true;
                 }
             }
+
+            int[][] pom = new int[coordinates.length][coordinates[0].length];
             if (!check1) {
                 GridPane.setRowIndex(button, row + 1);
                 copy.clear();
@@ -220,15 +186,21 @@ public class SoloGameController extends Controller implements GameController {
                 copy.remove(button);
                 moves--;
             }
+
             int index = 0;
             for (Node node : gridPane.getChildren()) {
                 coordinates[index][0] = GridPane.getRowIndex(node) != null ? GridPane.getRowIndex(node) : 0;
                 coordinates[index][1] = GridPane.getColumnIndex(node) != null ? GridPane.getColumnIndex(node) : 0;
                 index++;
             }
+
+            for (int i = 0; i < coordinates.length; i++) {
+                for (int j = 0; j < coordinates[0].length; j++) {
+                    pom[i][j] = coordinates[i][j];
+                }
+            }
+            coordArrayList.add(pom);
         }
-        aStar=new AStar(convert(buttons));
-        genetic=new Genetic(convert(buttons));
     }
 
     @FXML
@@ -296,12 +268,12 @@ public class SoloGameController extends Controller implements GameController {
 
     public void win() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/views/endgame.fxml"));
+        loader.setLocation(this.getClass().getResource("/views/win.fxml"));
         AnchorPane anchorPane = loader.load();
-        EndGameController endGameController = loader.getController();
-        endGameController.setGameController(this);
-        endGameController.setScoreTextField();
-        endGameController.setMainController(mainController);
+        WinController winController = loader.getController();
+        winController.setGameController(this);
+        winController.setScoreTextField();
+        winController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
 
@@ -373,6 +345,4 @@ public class SoloGameController extends Controller implements GameController {
         confirmationController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
-
-
 }

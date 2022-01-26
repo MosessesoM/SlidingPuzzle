@@ -3,6 +3,7 @@ package aialgorithms;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class AStar implements Algorithm {
 
@@ -12,7 +13,7 @@ public class AStar implements Algorithm {
 
     public AStar(int[][] start) {
         BoardState startNode = new BoardState(start);
-        startNode.setgScore(0);
+        startNode.setgScore(-1);
         startNode.sethScore();
         startNode.setfScore();
         startNode.setParentIndex(-1);
@@ -20,8 +21,10 @@ public class AStar implements Algorithm {
         availableStates.add(startNode);
     }
 
-    public ArrayList<BoardState> findSolution() {
+    public ArrayList<BoardState> findSolution() throws IOException {
         BoardState present;
+        boolean check=false;
+        int index=-1;
         while (!availableStates.isEmpty()) {
             availableStates.sort(new Comparator<BoardState>() {
                 @Override
@@ -29,9 +32,23 @@ public class AStar implements Algorithm {
                     return Integer.compare(o1.getfScore(), o2.getfScore());
                 }
             });
-            present = availableStates.get(0);
+
+//            for (BoardState boardState :availableStates){
+//                for (int i=0;i<3;i++){
+//                    System.out.println(boardState.getState()[i][0]+" "+boardState.getState()[i][1]+" "+boardState.getState()[i][2]);
+//                }
+//                System.out.println("----------------------");
+//            }
+//            System.out.println("======================");
+//            System.in.read();
+
+            present = availableStates.remove(0);
+
             if (checkFinalState(present)) {
                 ArrayList<BoardState> solution = new ArrayList<>();
+
+                System.out.println(present.getgScore());
+
                 while (present.getParentIndex() != -1) {
                     solution.add(present);
                     present = pastStates.get(present.getParentIndex());
@@ -42,25 +59,28 @@ public class AStar implements Algorithm {
             ArrayList<BoardState> successors = expansion(present);
             pastStates.add(present);
             for (BoardState successor : successors) {
-                if (pastStates.contains(successor)) {
-                    successor.setgScore(present.getgScore());
-                    successor.sethScore();
-                    successor.setfScore();
-                    successor.setParentIndex(pastStates.indexOf(present));
-                    if (pastStates.get(pastStates.indexOf(successor)).getgScore() > successor.getgScore()) {
-                        pastStates.get(pastStates.indexOf(successor)).setgScore(successor.getgScore());
+                check=false;
+                successor.setgScore(present.getgScore());
+                successor.sethScore();
+                successor.setfScore();
+                successor.setParentIndex(pastStates.indexOf(present));
+                for (BoardState boardState: pastStates){
+                    if (checkIfStateSame(boardState,successor)){
+                        check=true;
+                        index=pastStates.indexOf(boardState);
+                        break;
+                    }
+                }
+                if (check) {
+                    if (pastStates.get(index).getgScore() > successor.getgScore()) {
+                        pastStates.get(index).setgScore(present.getgScore());
+                        pastStates.get(index).setfScore();
                         availableStates.add(successor);
                     }
-                    availableStates.add(successor);
                 } else {
-                    successor.setgScore(present.getgScore());
-                    successor.sethScore();
-                    successor.setfScore();
-                    successor.setParentIndex(pastStates.indexOf(present));
                     availableStates.add(successor);
                 }
             }
-            availableStates.remove(present);
         }
         return null;
     }
@@ -78,9 +98,6 @@ public class AStar implements Algorithm {
                     column = j;
                     break;
                 }
-            }
-            if (row != -1) {
-                break;
             }
         }
         if (row + 1 < 3) {
@@ -132,5 +149,17 @@ public class AStar implements Algorithm {
             }
         }
         return true;
+    }
+
+    private boolean checkIfStateSame(BoardState a, BoardState b){
+        boolean check =true;
+        for (int i=0;i<3;i++){
+            for (int j=0;j<3;j++){
+                if (a.getState()[i][j]!=b.getState()[i][j]){
+                    check=false;
+                }
+            }
+        }
+        return check;
     }
 }

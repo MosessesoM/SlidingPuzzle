@@ -1,15 +1,13 @@
 
-R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ô«»ÇÔ/
+t
+java:S3776X"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÌûÉÛıÿÿÿÿ8²‘³¬ä/
 H
-java:S1168A"+Return an empty collection instead of null.(¥¹ï8ÒˆßĞÒ/
-t
-java:S3776D"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÌûÉÛıÿÿÿÿ8åæĞÒ/
-’
-java:S1319D"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÌûÉÛıÿÿÿÿ8¶êÀÇÔ/
-t
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ôÑ•®ùÿÿÿÿ8Æ÷’§Ò/
-’
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ôÑ•®ùÿÿÿÿ8¿Ê¬§Ò/
+java:S1168U"+Return an empty collection instead of null.(¥¹ï8²‘³¬ä/
+Z	java:S1062"9Replace this use of System.out or System.err by a logger.(¶øˆîşÿÿÿÿ8²‘³¬ä/
 J
-java:S1604"(Make this anonymous inner class a lambda(Ç•Ÿ£şÿÿÿÿ8ı«ôÑ/
+java:S1604"(Make this anonymous inner class a lambda(Ç•Ÿ£şÿÿÿÿ8ı«ôÑ/
+P
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ãËË²â/
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¹Åƒùùÿÿÿÿ8Ã¨û«ä/
+W	java:S125$"<This block of commented-out lines of code should be removed.(Õ”Ğp8œÔÄ¬ä/

@@ -9,9 +9,17 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class GameSettingsController extends Controller {
+public class SoloGameSettingsController extends Controller {
 
-    private String game_mode;
+    @FXML
+    public MenuItem player2MenuItem1;
+    @FXML
+    public MenuItem player2MenuItem2;
+
+    @FXML
+    public MenuButton player1MenuButton;
+    @FXML
+    public MenuButton player2MenuButton;
 
     @FXML
     public Button cancelButton;
@@ -59,35 +67,34 @@ public class GameSettingsController extends Controller {
     @FXML
     public void acceptButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        switch (game_mode) {
-            case "solo":
-                loader.setLocation(this.getClass().getResource("/views/sologame.fxml"));
-                AnchorPane anchorPanesolo = loader.load();
-                SoloGameController soloGameController = loader.getController();
-                soloGameController.setMainController(mainController);
-                mainController.setScreen(anchorPanesolo);
-                break;
-            case "vs":
+
+        int moves =0;
+
+            switch (levelMenuButton.getText()) {
+                case "Level 1":
+                    moves = 10;
+                    break;
+                case "Level 2":
+                    moves = 20;
+                    break;
+                case "Level 3":
+                    moves = 30;
+                    break;
+                default:
+                    levelMenuButton.setText("Choose difficulty level.");
+                    break;
+            }
                 loader.setLocation(this.getClass().getResource("/views/vsgame.fxml"));
                 AnchorPane anchorPanevs = loader.load();
-                VsGameController vsGameController = loader.getController();
-                vsGameController.setMainController(mainController);
+                SoloGameController soloGameController = loader.getController();
+                soloGameController.setMainController(mainController);
+                soloGameController.randomStart(moves);
                 mainController.setScreen(anchorPanevs);
-                break;
-            case "coop":
-                loader.setLocation(this.getClass().getResource("/views/coopgame.fxml"));
-                AnchorPane anchorPanecoop = loader.load();
-                CoopGameController coopGameController = loader.getController();
-                coopGameController.setMainController(mainController);
-                mainController.setScreen(anchorPanecoop);
-                break;
-            default:
-                break;
-        }
     }
 
     @FXML
     public void levelManuButtonOnAction(ActionEvent actionEvent) {
+
     }
 
     @FXML
@@ -113,7 +120,26 @@ public class GameSettingsController extends Controller {
     public void columnsTextFieldOnAction(ActionEvent actionEvent) {
     }
 
-    public void setGame_mode(String game_mode){
-        this.game_mode=game_mode;
+    public void player1MenuButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void player1MenuItemOnAction(ActionEvent actionEvent) {
+    }
+
+    public void player1MenuItem2OnAction(ActionEvent actionEvent) {
+    }
+
+    public void player1MenuItem3OnAction(ActionEvent actionEvent) {
+    }
+
+    public void player2MenuButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void player2MenuItem1OnAction(ActionEvent actionEvent) {
+        player2MenuButton.setText(player2MenuItem1.getText());
+    }
+
+    public void player2MenuItem2OnAction(ActionEvent actionEvent) {
+        player2MenuButton.setText(player2MenuItem2.getText());
     }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VsGameSettingsController">
+   <children>
+      <AnchorPane layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+         <children>
+            <Button fx:id="cancelButton" layoutX="14.0" layoutY="161.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" text="Cancel" />
+            <Button fx:id="acceptButton" layoutX="134.0" layoutY="161.0" mnemonicParsing="false" onAction="#acceptButtonOnAction" text="Accept" />
+            <Label fx:id="dificultylevelLabel" layoutX="17.0" layoutY="90.0" prefHeight="37.0" prefWidth="52.0" text="Dificulty Level" wrapText="true" />
+            <MenuButton fx:id="levelMenuButton" layoutX="85.0" layoutY="95.0" mnemonicParsing="false" onAction="#levelManuButtonOnAction" prefHeight="26.0" prefWidth="98.0" text="Level">
+              <items>
+                <MenuItem fx:id="level1MenuItem" mnemonicParsing="false" onAction="#level1MenuItemOnAction" text="Level 1" />
+                <MenuItem fx:id="level2MenuItem" mnemonicParsing="false" onAction="#level2MenuItemOnAction" text="Level 2" />
+                  <MenuItem fx:id="level3MenuItem" mnemonicParsing="false" onAction="#level3MenuItemOnAction" text="Level 3" />
+              </items>
+            </MenuButton>
+            <Label layoutX="18.0" layoutY="22.0" text="Player 1" />
+            <Label layoutX="18.0" layoutY="60.0" text="Player 2" />
+            <MenuButton fx:id="player1MenuButton" layoutX="85.0" layoutY="18.0" mnemonicParsing="false" onAction="#player1MenuButtonOnAction" prefHeight="26.0" prefWidth="98.0">
+               <items>
+                  <MenuItem fx:id="player1MenuItem1" mnemonicParsing="false" onAction="#player1MenuItemOnAction" text="A Star" />
+                  <MenuItem fx:id="player1MenuItem2" mnemonicParsing="false" onAction="#player1MenuItem2OnAction" text="Genetic" />
+                  <MenuItem fx:id="player1MenuItem3" mnemonicParsing="false" onAction="#player1MenuItem3OnAction" text="Player" />
+               </items>
+            </MenuButton>
+            <MenuButton fx:id="player2MenuButton" layoutX="85.0" layoutY="56.0" mnemonicParsing="false" onAction="#player2MenuButtonOnAction" prefHeight="26.0" prefWidth="98.0">
+               <items>
+                  <MenuItem fx:id="player2MenuItem1" mnemonicParsing="false" onAction="#player2MenuItem1OnAction" text="A Star" />
+                  <MenuItem fx:id="player2MenuItem2" mnemonicParsing="false" onAction="#player2MenuItem2OnAction" text="Genetic" />
+               </items>
+            </MenuButton>
+            <Label fx:id="warningLabel" layoutX="86.0" layoutY="144.0" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

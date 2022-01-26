@@ -10,7 +10,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class EndGameController extends Controller {
+public class WinController extends Controller {
 
     @FXML
     public TextField scoreTextField;

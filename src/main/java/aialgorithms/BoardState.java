@@ -3,7 +3,7 @@ package aialgorithms;
 public class BoardState {
     private int gScore;
 
-    private int hScore = 8;
+    private int hScore = 9;
 
     private int fScore;
 
@@ -11,7 +11,7 @@ public class BoardState {
 
     private int parentIndex;
 
-    private int fitnesFunction;
+    private int fitnessFunction =0;
 
     public BoardState(int[][] state) {
         setState(state);
@@ -30,11 +30,13 @@ public class BoardState {
     }
 
     public void sethScore() {
+        int index=1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (state[i][j] == Algorithm.end[i][j] && state[i][j] != -1) {
+                if (state[i][j] == index || (state[i][j]==-1 && index==9)) {
                     hScore--;
                 }
+                index++;
             }
         }
     }
@@ -65,19 +67,18 @@ public class BoardState {
         this.parentIndex = parentIndex;
     }
 
-    public int getFitnesFunction() {
-        return fitnesFunction;
+    public int getFitnessFunction() {
+        return fitnessFunction;
     }
 
-    public void setFinesFunction() {
+    public void setFitnessFunction() {
         int index=1;
-        fitnesFunction =0;
         for (int i=0;i<3;i++){
             for (int j=0;j<3;j++){
                 if (state[i][j]==-1){
-                    fitnesFunction +=Math.abs(9-index);
+                    fitnessFunction +=Math.abs(9-index);
                 } else {
-                    fitnesFunction +=Math.abs(state[i][j]-index);
+                    fitnessFunction +=Math.abs(state[i][j]-index);
                 }
                 index++;
             }
