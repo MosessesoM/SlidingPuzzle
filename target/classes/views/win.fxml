@@ -2,10 +2,14 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.WinController">
    <children>
-      <Label layoutX="272.0" layoutY="155.0" text="You won!!!" />
+      <Label layoutX="243.0" layoutY="155.0" text="You won!!!">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
       <Button fx:id="exitButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitButtonOnAction" text="Exit" />
       <Button fx:id="playagainButton" layoutX="520.0" layoutY="361.0" mnemonicParsing="false" onAction="#playagainButtonOnAction" text="Play Again" />
       <Label layoutX="270.0" layoutY="191.0" text="Your score:" />

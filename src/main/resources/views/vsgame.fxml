@@ -55,12 +55,12 @@
             <Label layoutX="201.0" layoutY="5.0" text="Statistics:" />
             <Label layoutX="40.0" layoutY="23.0" text="Number of moves" />
             <Label layoutX="196.0" layoutY="23.0" text="Game time" />
-            <Label layoutX="268.0" layoutY="23.0" prefWidth="169.0" text="Number of tiles in the rigt place" />
+            <Label layoutX="267.0" layoutY="23.0" prefWidth="169.0" text="Tiles of Player 1 in right place" />
             <TextField fx:id="numberofmovesTextFIeld" layoutX="74.0" layoutY="40.0" prefHeight="26.0" prefWidth="28.0" />
             <TextField fx:id="gametimeTextField" layoutX="201.0" layoutY="40.0" prefHeight="26.0" prefWidth="50.0" />
             <TextField fx:id="buttonsinplaceTextField" layoutX="338.0" layoutY="40.0" prefHeight="26.0" prefWidth="28.0" />
          </children></AnchorPane>
-      <Label fx:id="board1Label" layoutX="130.0" layoutY="14.0" text="Your Board" />
-      <Label fx:id="board2Label" layoutX="394.0" layoutY="14.0" text="Computer Board" />
+      <Label fx:id="board1Label" layoutX="121.0" layoutY="14.0" text="Player 1 Board" />
+      <Label fx:id="board2Label" layoutX="399.0" layoutY="14.0" text="Player 2 Board" />
     </children>
 </AnchorPane>

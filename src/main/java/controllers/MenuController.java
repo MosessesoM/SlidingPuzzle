@@ -33,10 +33,10 @@ public class MenuController extends Controller {
     @FXML
     public void solomodeButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/views/vsgamesettings.fxml"));
+        loader.setLocation(this.getClass().getResource("/views/sologamesettings.fxml"));
         AnchorPane anchorPane = loader.load();
-        VsGameSettingsController gameSettingController = loader.getController();
-        gameSettingController.setMainController(mainController);
+        SoloGameSettingsController soloGameSettingsController = loader.getController();
+        soloGameSettingsController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
 
@@ -45,8 +45,8 @@ public class MenuController extends Controller {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("/views/vsgamesettings.fxml"));
         AnchorPane anchorPane = loader.load();
-        VsGameSettingsController gameSettingController = loader.getController();
-        gameSettingController.setMainController(mainController);
+        VsGameSettingsController vsGameSettingsController = loader.getController();
+        vsGameSettingsController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
 

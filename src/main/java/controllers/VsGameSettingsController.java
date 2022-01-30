@@ -17,44 +17,24 @@ public class VsGameSettingsController extends Controller {
     public MenuItem player2MenuItem2;
     @FXML
     public Label warningLabel;
-
     @FXML
     public MenuButton player1MenuButton;
     @FXML
     public MenuButton player2MenuButton;
-
     @FXML
     public Button cancelButton;
-
     @FXML
     public Button acceptButton;
-
-    @FXML
-    public Label rowsLabel;
-
-    @FXML
-    public Label columnsLabel;
-
     @FXML
     public Label dificultylevelLabel;
-
     @FXML
     public MenuButton levelMenuButton;
-
     @FXML
     public MenuItem level1MenuItem;
-
     @FXML
     public MenuItem level2MenuItem;
-
     @FXML
     public MenuItem level3MenuItem;
-
-    @FXML
-    public TextField rowsTextField;
-
-    @FXML
-    public TextField columnsTextField;
     @FXML
     public MenuItem player1MenuItem1;
     @FXML
@@ -74,39 +54,38 @@ public class VsGameSettingsController extends Controller {
 
     @FXML
     public void acceptButtonOnAction(ActionEvent actionEvent) throws IOException {
-        if (player1MenuButton.getText().isEmpty() || player2MenuButton.getText().isEmpty() || levelMenuButton.getText().isEmpty()){
-            warningLabel.setText("Fill all field.");
-        }else {
-            warningLabel.setText("");
+        warningLabel.setText("Wait a second. I'm thinking.");
             FXMLLoader loader = new FXMLLoader();
 
             int moves = 0;
 
-            switch (levelMenuButton.getText()) {
-                case "Level 1":
-                    moves = 10;
-                    break;
-                case "Level 2":
-                    moves = 20;
-                    break;
-                case "Level 3":
-                    moves = 30;
-                    break;
-                default:
-                    levelMenuButton.setText("Choose difficulty level.");
-                    break;
+                switch (levelMenuButton.getText()) {
+                    case "Level 1":
+                        moves = 10;
+                        break;
+                    case "Level 2":
+                        moves = 20;
+                        break;
+                    case "Level 3":
+                        moves = 30;
+                        break;
+                    default:
+                        break;
+                }
+            if (moves!=0 && !player2MenuButton.getText().isEmpty() && !player1MenuButton.getText().isEmpty()){
+                loader.setLocation(this.getClass().getResource("/views/vsgame.fxml"));
+                AnchorPane anchorPanevs = loader.load();
+                VsGameController vsGameController = loader.getController();
+                vsGameController.setMainController(mainController);
+                vsGameController.randomStart(moves);
+                if (!player1MenuButton.getText().equals("Player")) {
+                    vsGameController.aiMoves(player1MenuButton.getText(), 1);
+                }
+                vsGameController.aiMoves(player2MenuButton.getText(), 2);
+                mainController.setScreen(anchorPanevs);
+            } else {
+                warningLabel.setText("Fill all field.");
             }
-            loader.setLocation(this.getClass().getResource("/views/vsgame.fxml"));
-            AnchorPane anchorPanevs = loader.load();
-            VsGameController vsGameController = loader.getController();
-            vsGameController.setMainController(mainController);
-            vsGameController.randomStart(moves);
-            if (!player1MenuButton.getText().equals("Player")) {
-                vsGameController.aiMoves(player1MenuButton.getText(),1);
-            }
-            vsGameController.aiMoves(player2MenuButton.getText(),2);
-            mainController.setScreen(anchorPanevs);
-        }
     }
 
     @FXML

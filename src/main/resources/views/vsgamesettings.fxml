@@ -32,7 +32,7 @@
                   <MenuItem fx:id="player2MenuItem2" mnemonicParsing="false" onAction="#player2MenuItem2OnAction" text="Genetic" />
                </items>
             </MenuButton>
-            <Label fx:id="warningLabel" layoutX="86.0" layoutY="144.0" textFill="RED" />
+            <Label fx:id="warningLabel" layoutX="51.0" layoutY="135.0" prefHeight="18.0" prefWidth="98.0" textFill="RED" />
          </children>
       </AnchorPane>
    </children>

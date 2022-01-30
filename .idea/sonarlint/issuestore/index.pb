@@ -137,8 +137,6 @@ S
 +src/main/java/database/DatabaseGetters.java,e\9\e98e61f9630bff46f70fc01acc7144deb837e562
 S
 #src/main/resources/views/login.fxml,6\3\630252cd99e17cc56ecaba22c4f27d057eccc04e
-V
-&src/main/resources/views/register.fxml,b\9\b9a5361991656f336ecd5b97710ec4dd0b9427fd
 ]
 -src/main/java/controllers/GameController.java,6\7\671814fb737eb0b39e0fd059b7a0194fca2d571f
 U
@@ -157,3 +155,9 @@ g
 -src/main/java/controllers/LoseController.java,2\6\260f01bf51ec55f2610de80ce3b309628ef94510
 i
 9src/main/java/controllers/SoloGameSettingsController.java,d\0\d0e140b9796150998eabf2eda2e072e725adf79d
+N
+target/classes/views/lose.fxml,c\6\c6d6efcc0ff7bb1dc2c4708710fc2f1404e02bb5
+X
+(target/classes/views/vsgamesettings.fxml,b\1\b1628738d4c28f1a68b5b0655cef4db8de060734
+M
+target/classes/views/win.fxml,c\d\cd4b3b89556435b6ee641d33e0c13f5e146e58b4

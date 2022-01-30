@@ -39,4 +39,44 @@ public class DatabaseGetters {
         return users;
 
     }
+
+    public List<SoloScore> getSoloScores(){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        Query query = entityManager.createQuery("From SoloScore c");
+        List<SoloScore> soloScores = query.getResultList();
+
+        entityManager.close();
+        entityManagerFactory.close();
+        return soloScores;
+    }
+
+    public List<VsScore> getVsScores(){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        Query query = entityManager.createQuery("From VsScore c");
+        List<VsScore> vsScores = query.getResultList();
+
+        entityManager.close();
+        entityManagerFactory.close();
+        return vsScores;
+    }
+
+    public User getUserById(long id){
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        Query query = entityManager.createQuery("FROM User c WHERE c.User_id LIKE:id");
+        query.setParameter("id",id);
+        List<User> users=null;
+        users = query.getResultList();
+
+        for (User user:users){
+            return user;
+        }
+
+        return null;
+    }
 }

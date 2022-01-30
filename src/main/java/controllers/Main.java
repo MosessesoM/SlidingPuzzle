@@ -31,27 +31,13 @@ public class Main extends Application {
         loader.setLocation(this.getClass().getResource("/views/main.fxml"));
         AnchorPane anchorPane = loader.load();
 
-//        entityManager.getTransaction().begin();
-//
-//        User user = new User();
-//        user.setEmail("rafal.godlewski.98@gmail.com");
-//        user.setName("admin");
-//        user.setPassword("haslo");
-//        user.setPermission(true);
-//
-//        entityManager.persist(user);
-//
-//        entityManager.getTransaction().commit();
-//        entityManager.close();
-//        entityManagerFactory.close();
-
-        Scene scene = new Scene(anchorPane, 1024, 600);
+        Scene scene = new Scene(anchorPane, 600, 400);
         primaryStage.setScene(scene);
-        primaryStage.setMaximized(true);
+        primaryStage.setMaximized(false);
         primaryStage.setTitle("Sliding Puzzle");
-        primaryStage.setMinHeight(600);
-        primaryStage.setMinWidth(1024);
-        primaryStage.setResizable(true);
+        primaryStage.setMinHeight(400);
+        primaryStage.setMinWidth(600);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

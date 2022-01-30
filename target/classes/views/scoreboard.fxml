@@ -7,8 +7,9 @@
    <children>
       <TableView fx:id="scoreboardTableView" layoutX="102.0" layoutY="60.0" prefHeight="278.0" prefWidth="395.0">
         <columns>
-          <TableColumn fx:id="nameTableColumn" prefWidth="315.80003356933594" text="Name" />
-          <TableColumn fx:id="scoreTableColumn" minWidth="0.0" prefWidth="78.5999755859375" text="Score" />
+          <TableColumn fx:id="nameTableColumn" prefWidth="235.59998321533203" text="Name" />
+            <TableColumn fx:id="gamemodeTableColumn" prefWidth="90.0" text="Game Mode" />
+          <TableColumn fx:id="scoreTableColumn" minWidth="0.0" prefWidth="70.39996337890625" text="Score" />
         </columns>
       </TableView>
       <Button fx:id="exitButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitButtonOnAction" text="EXIT" />

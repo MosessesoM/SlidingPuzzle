@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SoloGameSettingsController">
+   <children>
+      <AnchorPane layoutX="200.0" layoutY="118.0" prefHeight="155.0" prefWidth="200.0" style="-fx-border-color: black;">
+         <children>
+            <Button fx:id="cancelButton" layoutX="14.0" layoutY="118.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" text="Cancel" />
+            <Button fx:id="acceptButton" layoutX="133.0" layoutY="118.0" mnemonicParsing="false" onAction="#acceptButtonOnAction" text="Accept" />
+            <Label fx:id="dificultylevelLabel" layoutX="60.0" layoutY="14.0" prefHeight="38.0" prefWidth="80.0" text="Dificulty Level" wrapText="true" />
+            <MenuButton fx:id="levelMenuButton" layoutX="51.0" layoutY="52.0" mnemonicParsing="false" onAction="#levelManuButtonOnAction" prefHeight="26.0" prefWidth="98.0" text="Level">
+              <items>
+                <MenuItem fx:id="level1MenuItem" mnemonicParsing="false" onAction="#level1MenuItemOnAction" text="Level 1" />
+                <MenuItem fx:id="level2MenuItem" mnemonicParsing="false" onAction="#level2MenuItemOnAction" text="Level 2" />
+                  <MenuItem fx:id="level3MenuItem" mnemonicParsing="false" onAction="#level3MenuItemOnAction" text="Level 3" />
+              </items>
+            </MenuButton>
+            <Label fx:id="warningLabel" layoutX="14.0" layoutY="93.0" prefHeight="18.0" prefWidth="172.0" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

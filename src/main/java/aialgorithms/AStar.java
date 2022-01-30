@@ -33,21 +33,10 @@ public class AStar implements Algorithm {
                 }
             });
 
-//            for (BoardState boardState :availableStates){
-//                for (int i=0;i<3;i++){
-//                    System.out.println(boardState.getState()[i][0]+" "+boardState.getState()[i][1]+" "+boardState.getState()[i][2]);
-//                }
-//                System.out.println("----------------------");
-//            }
-//            System.out.println("======================");
-//            System.in.read();
-
             present = availableStates.remove(0);
 
             if (checkFinalState(present)) {
                 ArrayList<BoardState> solution = new ArrayList<>();
-
-                System.out.println(present.getgScore());
 
                 while (present.getParentIndex() != -1) {
                     solution.add(present);

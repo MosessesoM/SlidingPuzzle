@@ -277,64 +277,6 @@ public class SoloGameController extends Controller implements GameController {
         mainController.setScreen(anchorPane);
     }
 
-    private int[][] convert(ArrayList<Button> buttons) {
-        int[][] current = new int[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                current[i][j] = -1;
-            }
-        }
-        for (Button button : buttons) {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    switch (button.getId()) {
-                        case "button1":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 1;
-                            }
-                            break;
-                        case "button2":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 2;
-                            }
-                            break;
-                        case "button3":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 3;
-                            }
-                            break;
-                        case "button4":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 4;
-                            }
-                            break;
-                        case "button5":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 5;
-                            }
-                            break;
-                        case "button6":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 6;
-                            }
-                            break;
-                        case "button7":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 7;
-                            }
-                            break;
-                        case "button8":
-                            if ((GridPane.getRowIndex(button) != null ? GridPane.getRowIndex(button) : 0) == i && (GridPane.getColumnIndex(button) != null ? GridPane.getColumnIndex(button) : 0) == j) {
-                                current[i][j] = 8;
-                            }
-                            break;
-                    }
-                }
-            }
-        }
-        return current;
-    }
-
     @FXML
     public void exitButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();

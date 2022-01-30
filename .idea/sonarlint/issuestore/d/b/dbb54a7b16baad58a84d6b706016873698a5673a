@@ -1,13 +1,13 @@
 
-t
-java:S3776X"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÌûÉÛıÿÿÿÿ8²‘³¬ä/
-H
-java:S1168U"+Return an empty collection instead of null.(¥¹ï8²‘³¬ä/
-Z	java:S1062"9Replace this use of System.out or System.err by a logger.(¶øˆîşÿÿÿÿ8²‘³¬ä/
 J
 java:S1604"(Make this anonymous inner class a lambda(Ç•Ÿ£şÿÿÿÿ8ı«ôÑ/
+W	java:S125$"<This block of commented-out lines of code should be removed.(Õ”Ğp8œÔÄ¬ä/
 P
 java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ãËË²â/
 t
 java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¹Åƒùùÿÿÿÿ8Ã¨û«ä/
-W	java:S125$"<This block of commented-out lines of code should be removed.(Õ”Ğp8œÔÄ¬ä/
+t
+java:S3776X"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÌûÉÛıÿÿÿÿ8²‘³¬ä/
+Z	java:S1062"9Replace this use of System.out or System.err by a logger.(¶øˆîşÿÿÿÿ8²‘³¬ä/
+H
+java:S1168U"+Return an empty collection instead of null.(¥¹ï8²‘³¬ä/

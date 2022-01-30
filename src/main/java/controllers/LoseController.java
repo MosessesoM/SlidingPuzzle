@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -14,6 +15,8 @@ public class LoseController extends Controller {
     public Button exitButton;
     @FXML
     public Button playagainButton;
+    @FXML
+    public TextField scoreTextField;
 
     private GameController gameController;
 
@@ -56,5 +59,9 @@ public class LoseController extends Controller {
             default:
                 break;
         }
+    }
+
+    public void setScoreTextField(Integer score) {
+        scoreTextField.setText(String.valueOf(score));
     }
 }

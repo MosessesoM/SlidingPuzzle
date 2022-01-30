@@ -56,4 +56,34 @@ public class DatabaseSetters {
         entityManagerFactory.close();
         entityManager.close();
     }
+
+    public void setVsScore(User user, Integer score){
+        VsScore vsScore = new VsScore();
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        vsScore.setScore(score);
+
+//        if (user.getSoloScores()==null){
+//            List<SoloScore> vsScores = new ArrayList<SoloScore>();
+//            vsScores.add(vsScore);
+//            user.setSoloScores(vsScores);
+//        } else {
+//            user.getSoloScores().add(vsScore);
+//        }
+        List<VsScore> vsScores = new ArrayList<>();
+        vsScores.add(vsScore);
+        vsScore.setUser(user);
+
+        user.setVsScores(vsScores);
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(vsScore);
+        entityManager.merge(user);
+        entityManager.getTransaction().commit();
+
+        entityManagerFactory.close();
+        entityManager.close();
+    }
 }

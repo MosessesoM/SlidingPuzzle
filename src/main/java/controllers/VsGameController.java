@@ -103,7 +103,7 @@ public class VsGameController extends Controller implements GameController {
     private Timeline timer1;
 
     @FXML
-    void initialize() throws IOException {
+    void initialize() {
         coordinates = new int[end.length][2];
         numberofmoves = 0;
         time = 0;
@@ -287,9 +287,10 @@ public class VsGameController extends Controller implements GameController {
         numberofmovesTextFIeld.setText(String.valueOf(numberofmoves));
         buttonsinplaceTextField.setText(String.valueOf(buttonsinplace));
         if (endCheck(gridPane1) ){
+            timer1.stop();
             score = 1000 - time - numberofmoves;
             DatabaseSetters databaseSetters = new DatabaseSetters();
-            databaseSetters.setSoloScore(user, score);
+            databaseSetters.setVsScore(user, score);
             win();
         }
     }
@@ -312,6 +313,7 @@ public class VsGameController extends Controller implements GameController {
         AnchorPane anchorPane = loader.load();
         LoseController loseController = loader.getController();
         loseController.setGameController(this);
+        loseController.setScoreTextField(score);
         loseController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
@@ -382,24 +384,36 @@ public class VsGameController extends Controller implements GameController {
             solution= genetic.findSolution();
         }
 
+        if (solution==null){
+            gridPane2.getChildren().removeAll();
+            board2Label.setText("I give up. You won.");
+            return;
+        }
+
         ArrayList<BoardState> finalSolution = solution;
         timer1 = new Timeline(
                 new KeyFrame(Duration.seconds(1),
                         event -> {
-                            try {
                                 setBoard(finalSolution.remove(finalSolution.size()-1).getState(),player_number==1 ? gridPane1 : gridPane2);
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                            if (endCheck(player_number==1 ? gridPane1 : gridPane2)){
+                                timer1.stop();
+                                if (player_number==2){
+                                    score = time + numberofmoves;
+                                } else {
+                                    score=-(time+numberofmoves);
+                                }
+                                DatabaseSetters databaseSetters = new DatabaseSetters();
+                                databaseSetters.setVsScore(user, score);
+                                try {
+                                    lose();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         }
                 ));
         timer1.setCycleCount(Timeline.INDEFINITE);
         timer1.play();
-        if (endCheck(player_number==1 ? gridPane1 : gridPane2)){
-            DatabaseSetters databaseSetters = new DatabaseSetters();
-            databaseSetters.setSoloScore(user, 0);
-            lose();
-        }
     }
 
     @FXML
@@ -413,7 +427,7 @@ public class VsGameController extends Controller implements GameController {
         mainController.setScreen(anchorPane);
     }
 
-    private void setBoard(int[][] state,GridPane gridPane) throws IOException {
+    private void setBoard(int[][] state,GridPane gridPane){
         int index=1;
         for (Node node:gridPane.getChildren()){
             for (int i=0;i<3;i++){
@@ -425,11 +439,6 @@ public class VsGameController extends Controller implements GameController {
                 }
             }
             index++;
-        }
-        if (endCheck(gridPane)){
-            DatabaseSetters databaseSetters = new DatabaseSetters();
-            databaseSetters.setSoloScore(user, 0);
-            lose();
         }
     }
 
