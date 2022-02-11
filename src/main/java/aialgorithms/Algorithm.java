@@ -9,7 +9,7 @@ public interface Algorithm {
 
     ArrayList<BoardState> findSolution() throws IOException;
 
-    ArrayList<BoardState> expansion(BoardState present);
+    ArrayList<BoardState> expansion(BoardState present) throws IOException;
 
     boolean checkFinalState(BoardState n);
 }

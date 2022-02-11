@@ -1,11 +1,12 @@
 
-\
-java:S1128":Remove this unused import 'javax.persistence.Persistence'.(›²ö¾ıÿÿÿÿ8Î€¦ŠÄ/
-`
-java:S1128"CRemove this unused import 'javax.persistence.EntityManagerFactory'.(îÜğ8Î€¦ŠÄ/
 ^
 java:S1128
 "<Remove this unused import 'javax.persistence.EntityManager'.(ğàËÒıÿÿÿÿ8Î€¦ŠÄ/
-X	java:S125""<This block of commented-out lines of code should be removed.(áÅœÉ8…¬Œ‡Ä/
+`
+java:S1128"CRemove this unused import 'javax.persistence.EntityManagerFactory'.(îÜğ8Î€¦ŠÄ/
 b
 java:S1128"@Remove this unused import 'javax.persistence.EntityTransaction'.(¶“çğüÿÿÿÿ8Î€¦ŠÄ/
+\
+java:S1128":Remove this unused import 'javax.persistence.Persistence'.(›²ö¾ıÿÿÿÿ8Î€¦ŠÄ/
+L
+java:S1128"*Remove this unused import 'database.User'.(çÏ–±øÿÿÿÿ8ÒÈ¦áê/

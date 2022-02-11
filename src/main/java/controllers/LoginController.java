@@ -7,8 +7,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -53,25 +51,25 @@ public class LoginController extends Controller {
     public Label loginWarningLabel;
 
     @FXML
-    void initialize(){
+    void initialize() {
 
     }
 
     @FXML
     public void loginButtonOnAction(ActionEvent actionEvent) throws IOException {
-        DatabaseGetters databaseGetters= new DatabaseGetters();
-        if (loginTextField.getText().equals("") || passwordTextField.getText().equals("")){
-            loginWarningLabel.setText("Wrong data");
-        }else {
-            User user = databaseGetters.getUser(loginTextField.getText(),passwordTextField.getText());
-            if (user==null)
-            {
-                loginWarningLabel.setText("Wrong data");
+        String message="Wrong data";
+        DatabaseGetters databaseGetters = new DatabaseGetters();
+        if (loginTextField.getText().equals("") || passwordTextField.getText().equals("")) {
+            loginWarningLabel.setText(message);
+        } else {
+            User user = databaseGetters.getUser(loginTextField.getText(), passwordTextField.getText());
+            if (user == null) {
+                loginWarningLabel.setText(message);
             } else if (loginTextField.getText().equals(user.getName()) && passwordTextField.getText().equals(user.getPassword())) {
                 Main.getStage().setUserData(user);
                 new GoToMenuCommand(mainController).execute();
             } else {
-                loginWarningLabel.setText("Wrong data");
+                loginWarningLabel.setText(message);
             }
         }
     }

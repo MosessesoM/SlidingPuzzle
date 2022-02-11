@@ -3,7 +3,6 @@ package aialgorithms;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
-import java.util.stream.IntStream;
 
 public class Genetic implements Algorithm {
 
@@ -17,66 +16,60 @@ public class Genetic implements Algorithm {
         startNode.setParentIndex(-1);
         currentPopulation.add(startNode);
     }
-    //    TODO: Przy krzyżowaniu można spróbować z wykonywaniem takich ruchów by puste pola były na tym samym mijescu co u drugieo rodzica
 
     @Override
     public ArrayList<BoardState> findSolution() {
-        boolean check=false;
-        int generation=0;
+        boolean check = false;
+        int generation = 0;
         BoardState present = null;
         ArrayList<BoardState> solution = new ArrayList<>();
-        while (!check && generation<100000){
-            for (BoardState boardState:currentPopulation){
-                if (checkFinalState(boardState)){
-                    check=true;
-                    present=boardState;
+        while (!check && generation < 100000) {
+            for (BoardState boardState : currentPopulation) {
+                if (checkFinalState(boardState)) {
+                    check = true;
+                    present = boardState;
                 }
             }
             generation++;
             setPopulation();
         }
 
-        if (!present.equals(null)){
+        if (present != null) {
             while (present.getParentIndex() != -1) {
                 solution.add(present);
                 present = history.get(present.getParentIndex());
             }
             solution.add(present);
         } else {
-            solution=null;
+            solution = null;
         }
-
         return solution;
     }
 
     private void setPopulation() {
-        if (currentPopulation.size()>10){
-            currentPopulation.subList(10, currentPopulation.size()).clear();
+        if (currentPopulation.size() > 100) {
+            currentPopulation.subList(100, currentPopulation.size()).clear();
         }
 
-        ArrayList<BoardState> pom = new ArrayList<>();
+        ArrayList<BoardState> pom = new ArrayList<>(0);
         for (BoardState boardState : currentPopulation) {
             pom.addAll(expansion(boardState));
         }
-        pom.sort(new Comparator<BoardState>() {
-            @Override
-            public int compare(BoardState o1, BoardState o2) {
-                return Integer.compare(o1.getFitnessFunction(), o2.getFitnessFunction());
-            }
-        });
 
         ArrayList<BoardState> newPopulation = new ArrayList<>(0);
-        while (pom.size()>1){
+        while (pom.size() > 1) {
             newPopulation.addAll(reproduction(pom.remove(0), pom.remove(0)));
         }
         pom.clear();
-        pom.addAll(newPopulation);
-        newPopulation.clear();
-        for (int i=0;i< pom.size();i++){
-            newPopulation.add(mutation(pom.remove(i)));
+
+        while (!newPopulation.isEmpty()) {
+            pom.add(mutation(newPopulation.remove(0)));
         }
+
         currentPopulation.clear();
-        currentPopulation.addAll(newPopulation);
+        currentPopulation.addAll(pom);
+
+        currentPopulation.sort(Comparator.comparingInt(BoardState::getFitnessFunction));
     }
 
     @Override
@@ -97,6 +90,7 @@ public class Genetic implements Algorithm {
         }
 
         history.add(present);
+        int parentIndex = history.indexOf(present);
 
         if (row + 1 < 3) {
             for (int i = 0; i < 3; i++) {
@@ -105,8 +99,8 @@ public class Genetic implements Algorithm {
             successor[row][column] = state[row + 1][column];
             successor[row + 1][column] = state[row][column];
             BoardState boardState = new BoardState(successor);
-            boardState.setParentIndex(history.indexOf(present));
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            boardState.setParentIndex(parentIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
             successors.add(boardState);
         }
         if (row - 1 > -1) {
@@ -116,8 +110,8 @@ public class Genetic implements Algorithm {
             successor[row][column] = state[row - 1][column];
             successor[row - 1][column] = state[row][column];
             BoardState boardState = new BoardState(successor);
-            boardState.setParentIndex(history.indexOf(present));
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            boardState.setParentIndex(parentIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
             successors.add(boardState);
         }
         if (column + 1 < 3) {
@@ -127,8 +121,8 @@ public class Genetic implements Algorithm {
             successor[row][column] = state[row][column + 1];
             successor[row][column + 1] = state[row][column];
             BoardState boardState = new BoardState(successor);
-            boardState.setParentIndex(history.indexOf(present));
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            boardState.setParentIndex(parentIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
             successors.add(boardState);
         }
         if (column - 1 > -1) {
@@ -138,10 +132,11 @@ public class Genetic implements Algorithm {
             successor[row][column] = state[row][column - 1];
             successor[row][column - 1] = state[row][column];
             BoardState boardState = new BoardState(successor);
-            boardState.setParentIndex(history.indexOf(present));
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            boardState.setParentIndex(parentIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
             successors.add(boardState);
         }
+
         return successors;
     }
 
@@ -156,7 +151,7 @@ public class Genetic implements Algorithm {
         int column2 = -1;
         int[][] child1State = new int[3][3];
         int[][] child2State = new int[3][3];
-        int history_index=-1;
+        int historyIndex = -1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 child1State[i][j] = parent1.getState()[i][j];
@@ -173,9 +168,9 @@ public class Genetic implements Algorithm {
         }
 
         history.add(parent1);
-        history_index=history.indexOf(parent1);
+        historyIndex = history.indexOf(parent1);
+        children.add(parent1);
 
-//        TODO: ruchy zrobić przez przestawianie kafli (zmniejszanie/zwiększania współrzędnych pustego miejsca w tym dziecku) aż kolumna i wiersz nie będzie się zgadzało ze współrzędnymi pustego miejsca w drugim rodzicu
         row = row1;
         column = column1;
         while (row != row2) {
@@ -191,11 +186,14 @@ public class Genetic implements Algorithm {
                 row--;
             }
             BoardState boardState = new BoardState(child1State);
-            boardState.setParentIndex(history_index);
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            boardState.setParentIndex(historyIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
+
             history.add(boardState);
-            history_index=history.indexOf(boardState);
+            historyIndex = history.indexOf(boardState);
+            children.add(boardState);
         }
+
         while (column != column2) {
             if (column < column2) {
                 pom = child1State[row][column + 1];
@@ -209,22 +207,19 @@ public class Genetic implements Algorithm {
                 column--;
             }
             BoardState boardState = new BoardState(child1State);
-            boardState.setParentIndex(history_index);
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            boardState.setParentIndex(historyIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
+
             history.add(boardState);
-            history_index=history.indexOf(boardState);
-        }
-        if (history_index!=history.indexOf(parent1)){
-            BoardState child1 = new BoardState(child1State);
-            child1.setParentIndex(history.get(history_index).getParentIndex());
-            child1.setFitnessFunction(history.get(child1.getParentIndex()).getFitnessFunction());
-            children.add(child1);
-        } else {
-            children.add(parent1);
+            historyIndex = history.indexOf(boardState);
+            children.add(boardState);
         }
 
+        BoardState child1 = children.remove(children.size() - 1);
+
         history.add(parent2);
-        history_index=history.indexOf(parent2);
+        historyIndex = history.indexOf(parent2);
+        children.add(parent2);
 
         row = row2;
         column = column2;
@@ -240,12 +235,15 @@ public class Genetic implements Algorithm {
                 child2State[row][column] = pom;
                 row--;
             }
-            BoardState boardState = new BoardState(child1State);
-            boardState.setParentIndex(history_index);
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            BoardState boardState = new BoardState(child2State);
+            boardState.setParentIndex(historyIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
+
             history.add(boardState);
-            history_index=history.indexOf(boardState);
+            historyIndex = history.indexOf(boardState);
+            children.add(boardState);
         }
+
         while (column != column1) {
             if (column < column1) {
                 pom = child2State[row][column + 1];
@@ -258,20 +256,21 @@ public class Genetic implements Algorithm {
                 child2State[row][column] = pom;
                 column--;
             }
-            BoardState boardState = new BoardState(child1State);
-            boardState.setParentIndex(history_index);
-            boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+            BoardState boardState = new BoardState(child2State);
+            boardState.setParentIndex(historyIndex);
+            boardState.setFitnessFunction(checkPast(boardState));
+
             history.add(boardState);
-            history_index=history.indexOf(boardState);
+            historyIndex = history.indexOf(boardState);
+            children.add(boardState);
         }
-        if (history_index!=history.indexOf(parent2)){
-            BoardState child2 = new BoardState(child2State);
-            child2.setParentIndex(history.get(history_index).getParentIndex());
-            child2.setFitnessFunction(history.get(child2.getParentIndex()).getFitnessFunction());
-            children.add(child2);
-        } else {
-            children.add(parent2);
-        }
+
+        BoardState child2 = children.remove(children.size() - 1);
+
+        children.clear();
+        children.add(child1);
+        children.add(child2);
+
         return children;
     }
 
@@ -279,12 +278,12 @@ public class Genetic implements Algorithm {
         Random random = new Random();
         ArrayList<BoardState> mutants = new ArrayList<>();
         mutants.add(chromosome);
-        boolean check=false;
+        boolean check = false;
 
 
-        while (!check){
-            history.add(mutants.get(mutants.size()-1));
-            int[][] state = mutants.get(mutants.size()-1).getState();
+        while (!check) {
+            history.add(mutants.get(mutants.size() - 1));
+            int[][] state = mutants.get(mutants.size() - 1).getState();
             int row = -1;
             int column = -1;
             int[][] successor = new int[3][3];
@@ -293,7 +292,6 @@ public class Genetic implements Algorithm {
                     if (state[i][j] == -1) {
                         row = i;
                         column = j;
-                        break;
                     }
                 }
             }
@@ -307,10 +305,10 @@ public class Genetic implements Algorithm {
                         successor[row + 1][column] = state[row][column];
                         BoardState boardState = new BoardState(successor);
                         boardState.setParentIndex(history.indexOf(mutants.get(mutants.size() - 1)));
-                        boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+                        boardState.setFitnessFunction(checkPast(boardState));
                         mutants.add(boardState);
                     } else {
-                        check=true;
+                        check = true;
                     }
                     break;
                 case 1:
@@ -322,10 +320,10 @@ public class Genetic implements Algorithm {
                         successor[row - 1][column] = state[row][column];
                         BoardState boardState = new BoardState(successor);
                         boardState.setParentIndex(history.indexOf(mutants.get(mutants.size() - 1)));
-                        boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+                        boardState.setFitnessFunction(checkPast(boardState));
                         mutants.add(boardState);
                     } else {
-                        check=true;
+                        check = true;
                     }
                     break;
                 case 2:
@@ -337,10 +335,10 @@ public class Genetic implements Algorithm {
                         successor[row][column + 1] = state[row][column];
                         BoardState boardState = new BoardState(successor);
                         boardState.setParentIndex(history.indexOf(mutants.get(mutants.size() - 1)));
-                        boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+                        boardState.setFitnessFunction(checkPast(boardState));
                         mutants.add(boardState);
                     } else {
-                        check=true;
+                        check = true;
                     }
                     break;
                 case 3:
@@ -352,23 +350,23 @@ public class Genetic implements Algorithm {
                         successor[row][column - 1] = state[row][column];
                         BoardState boardState = new BoardState(successor);
                         boardState.setParentIndex(history.indexOf(mutants.get(mutants.size() - 1)));
-                        boardState.setFitnessFunction(history.get(boardState.getParentIndex()).getFitnessFunction());
+                        boardState.setFitnessFunction(checkPast(boardState));
                         mutants.add(boardState);
                     } else {
-                        check=true;
+                        check = true;
                     }
                     break;
                 default:
-                    check=true;
+                    check = true;
                     break;
             }
         }
-        return mutants.get(mutants.size()-1);
+
+        return mutants.get(mutants.size() - 1);
     }
 
     @Override
     public boolean checkFinalState(BoardState n) {
-        int[][] end = {{1, 2, 3}, {4, 5, 6}, {7, 8, -1}};
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (end[i][j] != n.getState()[i][j]) {
@@ -378,4 +376,30 @@ public class Genetic implements Algorithm {
         }
         return true;
     }
+
+    private int checkPast(BoardState current) {
+        boolean check = true;
+        ArrayList<BoardState> past = new ArrayList<>();
+        BoardState boardState = current;
+        int value = 0;
+        while (boardState.getParentIndex() != -1) {
+            past.add(history.get(boardState.getParentIndex()));
+            boardState = history.get(boardState.getParentIndex());
+        }
+        for (BoardState pastState : past) {
+            check = true;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (current.getState()[i][j] != pastState.getState()[i][j]) {
+                        check = false;
+                    }
+                }
+            }
+            if (check) {
+                value++;
+            }
+        }
+        return value;
+    }
+
 }

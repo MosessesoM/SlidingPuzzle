@@ -3,6 +3,7 @@ package database;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,13 +28,16 @@ public class DatabaseSetters {
         entityManager.close();
     }
 
-    public void setSoloScore(User user, Integer score){
+    public void setSoloScore(User user, Integer score, Integer time, Integer moves,Integer level){
         SoloScore soloScore = new SoloScore();
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         soloScore.setScore(score);
+        soloScore.setMoves(moves);
+        soloScore.setTime(time);
+        soloScore.setLevel(level);
 
 //        if (user.getSoloScores()==null){
 //            List<SoloScore> soloScores = new ArrayList<SoloScore>();
@@ -57,13 +61,16 @@ public class DatabaseSetters {
         entityManager.close();
     }
 
-    public void setVsScore(User user, Integer score){
+    public void setVsScore(User user, Integer score, Integer time, Integer moves, Integer level){
         VsScore vsScore = new VsScore();
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("manager1");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         vsScore.setScore(score);
+        vsScore.setMoves(moves);
+        vsScore.setTime(time);
+        vsScore.setLevel(level);
 
 //        if (user.getSoloScores()==null){
 //            List<SoloScore> vsScores = new ArrayList<SoloScore>();

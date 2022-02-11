@@ -1,21 +1,9 @@
 
-Z	java:S106)"9Replace this use of System.out or System.err by a logger.(„—¶Ãüÿÿÿÿ8´ë¨Õá/
-p
-java:S3776–"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(×ô€Ù8ùÉîóæ/
-u
-java:S3776”"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(¾ğ‡‚ıÿÿÿÿ8ùÉîóæ/
-P
-java:S1135²"2Complete the task associated to this TODO comment.(í†å×8ùÉîóæ/
 ;
-java:S2119—"Save and re-use this "Random".(¼İÅf8ùÉîóæ/
-J
-java:S1604<"(Make this anonymous inner class a lambda(íşÄÈÿÿÿÿÿ8ÿÄøÌæ/
-O
-java:S1135"2Complete the task associated to this TODO comment.(÷Öş³8¦·ØÚØ/
-s	java:S117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹úû¯ûÿÿÿÿ8ùÉîóæ/
+java:S2119–"Save and re-use this "Random".(¼İÅf8ÙÜ´Ÿî/
+u
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(¾ğ‡‚ıÿÿÿÿ8ÙÜ´Ÿî/
 t
-java:S3776R"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÌûÉÛıÿÿÿÿ8ÿÄøÌæ/
-U
-java:S1135“"2Complete the task associated to this TODO comment.(ö—œşÿÿÿÿ8ùÉîóæ/
-Y
-java:S1128"7Remove this unused import 'java.util.stream.IntStream'.(ÙÉ½Ÿùÿÿÿÿ8Æ›şüä/
+java:S3776L"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÌûÉÛıÿÿÿÿ8ÙÜ´Ÿî/
+p
+java:S3776•"RRefactor this method to reduce its Cognitive Complexity from 44 to the 15 allowed.(×ô€Ù8ÙÜ´Ÿî/

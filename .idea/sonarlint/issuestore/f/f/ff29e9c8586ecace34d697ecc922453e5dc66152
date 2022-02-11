@@ -1,6 +1,9 @@
 
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËåÛ‘8ðª‹†Ä/
 l	java:S116"PRename this field "Score" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÙØý8ðª‹†Ä/
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÿÝŠüÿÿÿÿ8ðª‹†Ä/
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËåÛ‘8ðª‹†Ä/
+m	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËåÛ‘8ðª‹†Ä/
+q	java:S116"PRename this field "Level" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹£ù’ûÿÿÿÿ8º¤­£í/
+q	java:S116"PRename this field "Moves" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªÐáÓúÿÿÿÿ8Ú†Ø¢í/
+k	java:S116"ORename this field "Time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ßÍü8Ú†Ø¢í/
+o	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÿÝŠüÿÿÿÿ8ðª‹†Ä/
 p	java:S116"URename this field "VsScore_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èÐŸj8†¶Œ†Ä/
+j	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËåÛ‘8ðª‹†Ä/

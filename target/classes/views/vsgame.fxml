@@ -55,7 +55,7 @@
             <Label layoutX="201.0" layoutY="5.0" text="Statistics:" />
             <Label layoutX="40.0" layoutY="23.0" text="Number of moves" />
             <Label layoutX="196.0" layoutY="23.0" text="Game time" />
-            <Label layoutX="267.0" layoutY="23.0" prefWidth="169.0" text="Tiles of Player 1 in right place" />
+            <Label layoutX="267.0" layoutY="22.0" prefHeight="18.0" prefWidth="170.0" text="Tiles of Player in the right place" />
             <TextField fx:id="numberofmovesTextFIeld" layoutX="74.0" layoutY="40.0" prefHeight="26.0" prefWidth="28.0" />
             <TextField fx:id="gametimeTextField" layoutX="201.0" layoutY="40.0" prefHeight="26.0" prefWidth="50.0" />
             <TextField fx:id="buttonsinplaceTextField" layoutX="338.0" layoutY="40.0" prefHeight="26.0" prefWidth="28.0" />

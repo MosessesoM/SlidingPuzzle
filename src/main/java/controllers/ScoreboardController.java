@@ -3,7 +3,6 @@ package controllers;
 import command.GoToMenuCommand;
 import database.DatabaseGetters;
 import database.SoloScore;
-import database.User;
 import database.VsScore;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,10 +12,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import net.bytebuddy.implementation.Implementation;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ScoreboardController extends Controller {
@@ -34,30 +32,42 @@ public class ScoreboardController extends Controller {
     public TableColumn scoreTableColumn;
 
     @FXML
+    public TableColumn timeTableColumn;
+
+    @FXML
+    public TableColumn movesTableColumn;
+
+    @FXML
+    public TableColumn levelTableColumn;
+
+    @FXML
     public Button exitButton;
 
     private DatabaseGetters databaseGetters = new DatabaseGetters();
 
     @FXML
-    void initialize(){
+    void initialize() {
         databaseGetters = new DatabaseGetters();
-        List<SoloScore> soloScores=databaseGetters.getSoloScores();
-        List<VsScore> vsScores=databaseGetters.getVsScores();
+        List<SoloScore> soloScores = databaseGetters.getSoloScores();
+        List<VsScore> vsScores = databaseGetters.getVsScores();
 
         ObservableList<Scoreboard> scoreboard = FXCollections.observableArrayList();
 
-        for (SoloScore soloScore:soloScores){
-            scoreboard.add(new Scoreboard(soloScore.getUser().getName(),"Solo",soloScore.getScore()));
+        for (SoloScore soloScore : soloScores) {
+            scoreboard.add(new Scoreboard(soloScore.getUser().getName(), "Solo", soloScore.getScore(),soloScore.getTime(),soloScore.getMoves(),soloScore.getLevel()));
         }
-        for (VsScore vsScore:vsScores){
-            scoreboard.add(new Scoreboard(vsScore.getUser().getName(),"VS",vsScore.getScore()));
+        for (VsScore vsScore : vsScores) {
+            scoreboard.add(new Scoreboard(vsScore.getUser().getName(), "VS", vsScore.getScore(),vsScore.getTime(),vsScore.getMoves(),vsScore.getLevel()));
         }
 
         scoreboardTableView.setItems(scoreboard);
-        nameTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard,String>("UserName"));
-        gamemodeTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard,String>("GameMode"));
-        scoreTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard,Integer>("Score"));
-        scoreboardTableView.getColumns().setAll(nameTableColumn,gamemodeTableColumn,scoreTableColumn);
+        nameTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard, String>("userName"));
+        gamemodeTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard, String>("gameMode"));
+        scoreTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard, Integer>("score"));
+        timeTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard, Integer>("time"));
+        movesTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard, Integer>("moves"));
+        levelTableColumn.setCellValueFactory(new PropertyValueFactory<Scoreboard,Integer>("level"));
+        scoreboardTableView.getColumns().setAll(nameTableColumn, gamemodeTableColumn, scoreTableColumn,timeTableColumn,movesTableColumn,levelTableColumn);
     }
 
     @FXML
@@ -65,41 +75,74 @@ public class ScoreboardController extends Controller {
         new GoToMenuCommand(mainController).execute();
     }
 
-    public static class Scoreboard{
-        private String UserName;
+    public static class Scoreboard {
+        private String userName;
 
-        private String GameMode;
+        private String gameMode;
 
-        private Integer Score;
+        private Integer score;
 
-        public Scoreboard(String userName, String gameMode, Integer score) {
-            UserName = userName;
-            GameMode = gameMode;
-            Score = score;
+        private Integer time;
+
+        private Integer moves;
+
+        private Integer level;
+
+        public Scoreboard(String userName, String gameMode, Integer score, Integer time, Integer moves, Integer level) {
+            this.userName = userName;
+            this.gameMode = gameMode;
+            this.score = score;
+            this.time=time;
+            this.moves=moves;
+            this.level=level;
         }
 
         public String getUserName() {
-            return UserName;
+            return userName;
         }
 
         public void setUserName(String userName) {
-            UserName = userName;
+            this.userName = userName;
         }
 
         public String getGameMode() {
-            return GameMode;
+            return gameMode;
         }
 
         public void setGameMode(String gameMode) {
-            GameMode = gameMode;
+            this.gameMode = gameMode;
         }
 
         public Integer getScore() {
-            return Score;
+            return score;
         }
 
         public void setScore(Integer score) {
-            Score = score;
+            this.score = score;
+        }
+
+        public Integer getTime() {
+            return time;
+        }
+
+        public void setTime(Integer time) {
+            this.time = time;
+        }
+
+        public Integer getMoves() {
+            return moves;
+        }
+
+        public void setMoves(Integer moves) {
+            this.moves = moves;
+        }
+
+        public Integer getLevel() {
+            return level;
+        }
+
+        public void setLevel(Integer level) {
+            this.level = level;
         }
     }
 }

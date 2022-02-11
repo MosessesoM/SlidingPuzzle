@@ -7,10 +7,16 @@
    <children>
       <TableView fx:id="scoreboardTableView" layoutX="102.0" layoutY="60.0" prefHeight="278.0" prefWidth="395.0">
         <columns>
-          <TableColumn fx:id="nameTableColumn" prefWidth="235.59998321533203" text="Name" />
-            <TableColumn fx:id="gamemodeTableColumn" prefWidth="90.0" text="Game Mode" />
-          <TableColumn fx:id="scoreTableColumn" minWidth="0.0" prefWidth="70.39996337890625" text="Score" />
+          <TableColumn fx:id="nameTableColumn" editable="false" prefWidth="79.0" resizable="false" text="Name" />
+            <TableColumn fx:id="gamemodeTableColumn" editable="false" prefWidth="79.0" resizable="false" text="Game Mode" />
+          <TableColumn fx:id="scoreTableColumn" editable="false" minWidth="0.0" prefWidth="59.25" resizable="false" text="Score" />
+            <TableColumn fx:id="timeTableColumn" editable="false" minWidth="0.0" prefWidth="59.25" resizable="false" text="Time" />
+            <TableColumn fx:id="movesTableColumn" editable="false" minWidth="0.0" prefWidth="59.25" resizable="false" text="Moves" />
+            <TableColumn fx:id="levelTableColumn" editable="false" minWidth="0.0" prefWidth="41.0" resizable="false" text="Level" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Button fx:id="exitButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitButtonOnAction" text="EXIT" />
    </children>

@@ -1,27 +1,26 @@
 
-u
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(ìÓëŠøÿÿÿÿ8úß±¼è/
-|
-java:S1171’"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8úß±¼è/
-P
-java:S1135"2Complete the task associated to this TODO comment.(£èÉ«8úß±¼è/
-p
-java:S3776ï"RRefactor this method to reduce its Cognitive Complexity from 33 to the 15 allowed.(ûšø8úß±¼è/
-
-java:S1130j"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¶’Ö®ùÿÿÿÿ8˜Ò®»è/
-c
-java:S3252…"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Ò™ˆû8˜¯Òºè/
-E
-java:S1604}"(Make this anonymous inner class a lambda(ÈŸİ8˜¯Òºè/
-c
-java:S3252Œ"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(¯¥ÕÙ8ß”ìè/
-|
-java:S3012İ"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(€ê»Ìşÿÿÿÿ8úß±¼è/
-s	java:S117ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›—Õàşÿÿÿÿ8ÚÉ—¾é/
 v
-java:S3776¿"SRefactor this method to reduce its Cognitive Complexity from 141 to the 15 allowed.(ìÙı”úÿÿÿÿ8€äÅëè/
-;
-java:S2119"Save and re-use this "Random".(¼İÅf8úß±¼è/
+java:S3776ç"SRefactor this method to reduce its Cognitive Complexity from 141 to the 15 allowed.(ìÙı”úÿÿÿÿ8¨Ò¤î/
+c
+java:S3252¦"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(¯¥ÕÙ8ÑàÏ¤î/
+D	java:S131ñ""Add a default case to this switch.(ñ¦·‚şÿÿÿÿ8¨Ò¤î/
+p
+java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(ûšø8ÑàÏ¤î/
 O
-java:S3599‘",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8úß±¼è/
-D	java:S131É""Add a default case to this switch.(ñ¦·‚şÿÿÿÿ8€äÅëè/
+java:S3599³",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8ÑàÏ¤î/
+|
+java:S1171´"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ÑàÏ¤î/
+S
+java:S1128"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜8ïéšî/
+|
+java:S3012ÿ"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(€ê»Ìşÿÿÿÿ8ÑàÏ¤î/
+j
+java:S2259º"GA "NullPointerException" could be thrown; "solution2" is nullable here.(”…¿úüÿÿÿÿ8¨Ò¤î/
+;
+java:S2119±"Save and re-use this "Random".(¼İÅf8ÑàÏ¤î/
+p
+java:S3776€"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(µ…›ã8ÑàÏ¤î/
+u
+java:S3776®"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(ìÓëŠøÿÿÿÿ8ÑàÏ¤î/
+V	java:S106¾"9Replace this use of System.out or System.err by a logger.(‰ˆõ—8˜óÑ¤î/
+U	java:S106¿"9Replace this use of System.out or System.err by a logger.(°±ËN8¨Ò¤î/

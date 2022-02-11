@@ -1,8 +1,6 @@
 package controllers;
 
-import aialgorithms.AStar;
-import aialgorithms.BoardState;
-import aialgorithms.Genetic;
+import command.GoToMenuCommand;
 import database.DatabaseSetters;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -80,6 +78,8 @@ public class SoloGameController extends Controller implements GameController {
 
     private int score;
 
+    private int level;
+
     @FXML
     void initialize() throws IOException {
         coordinates = new int[end.length][2];
@@ -118,6 +118,7 @@ public class SoloGameController extends Controller implements GameController {
 
     //    TODO: Pamiętać żeby dać zmienne wielkości zamiast sztywnych przy zmianie rozmiarów
     public void randomStart(int moves) {
+        level=moves/10;
         Random random = new Random();
 
         ArrayList<Button> buttons = new ArrayList<>() {
@@ -261,12 +262,12 @@ public class SoloGameController extends Controller implements GameController {
         if (check1) {
             score = 1000 - time - numberofmoves;
             DatabaseSetters databaseSetters = new DatabaseSetters();
-            databaseSetters.setSoloScore(user, score);
-            win();
+            databaseSetters.setSoloScore(user, score,time,numberofmoves,level);
+            win("Player");
         }
     }
 
-    public void win() throws IOException {
+    public void win(String playerName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getResource("/views/win.fxml"));
         AnchorPane anchorPane = loader.load();
@@ -274,17 +275,13 @@ public class SoloGameController extends Controller implements GameController {
         winController.setGameController(this);
         winController.setScoreTextField();
         winController.setMainController(mainController);
+        winController.setMoves(level*10);
+        winController.setWinnerNameLabel(playerName);
         mainController.setScreen(anchorPane);
     }
 
     @FXML
     public void exitButtonOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/views/confirmation.fxml"));
-        AnchorPane anchorPane = loader.load();
-        ConfirmationController confirmationController = loader.getController();
-        confirmationController.setGame_mode("solo");
-        confirmationController.setMainController(mainController);
-        mainController.setScreen(anchorPane);
+        new GoToMenuCommand(mainController).execute();
     }
 }

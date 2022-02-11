@@ -17,16 +17,13 @@ public class MenuController extends Controller {
     public Button versusmodeButton;
 
     @FXML
-    public Button coopmodeButton;
-
-    @FXML
     public Button scoreboardButton;
 
     @FXML
     public Button settingsButton;
 
     @FXML
-    void initialize(){
+    void initialize() {
 
     }
 
@@ -47,16 +44,6 @@ public class MenuController extends Controller {
         AnchorPane anchorPane = loader.load();
         VsGameSettingsController vsGameSettingsController = loader.getController();
         vsGameSettingsController.setMainController(mainController);
-        mainController.setScreen(anchorPane);
-    }
-
-    @FXML
-    public void coopmodeButtonOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(this.getClass().getResource("/views/vsgamesettings.fxml"));
-        AnchorPane anchorPane = loader.load();
-        VsGameSettingsController gameSettingController = loader.getController();
-        gameSettingController.setMainController(mainController);
         mainController.setScreen(anchorPane);
     }
 

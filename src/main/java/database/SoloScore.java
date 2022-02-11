@@ -11,6 +11,12 @@ public class SoloScore {
     private long SoloScore_Id;
     @Column(columnDefinition = "INT NOT NULL")
     private int Score;
+    @Column(columnDefinition = "INT NOT NULL")
+    private int Moves;
+    @Column(columnDefinition = "INT NOT NULL")
+    private int Time;
+    @Column(columnDefinition = "INT NOT NULL")
+    private int Level;
 
     @ManyToOne
     @JoinColumn(name = "User_id",nullable = false)
@@ -38,5 +44,29 @@ public class SoloScore {
 
     public void setScore(int score) {
         Score = score;
+    }
+
+    public int getMoves() {
+        return Moves;
+    }
+
+    public void setMoves(int moves) {
+        Moves = moves;
+    }
+
+    public int getTime() {
+        return Time;
+    }
+
+    public void setTime(int time) {
+        Time = time;
+    }
+
+    public int getLevel() {
+        return Level;
+    }
+
+    public void setLevel(int level) {
+        Level = level;
     }
 }

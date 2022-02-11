@@ -5,10 +5,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
    <children>
-      <Button fx:id="solomodeButton" layoutX="87.0" layoutY="132.0" mnemonicParsing="false" onAction="#solomodeButtonOnAction" prefHeight="56.0" prefWidth="125.0" text="SOLO MODE" />
-      <Button fx:id="versusmodeButton" layoutX="238.0" layoutY="132.0" mnemonicParsing="false" onAction="#versusmodeButtonOnAction" prefHeight="56.0" prefWidth="126.0" text="VERSUS MODE" />
-      <Button fx:id="coopmodeButton" layoutX="387.0" layoutY="132.0" mnemonicParsing="false" onAction="#coopmodeButtonOnAction" prefHeight="56.0" prefWidth="126.0" text="CO-OP MODE" />
-      <Button fx:id="scoreboardButton" layoutX="238.0" layoutY="213.0" mnemonicParsing="false" onAction="#scoreboardButtonOnAction" prefHeight="56.0" prefWidth="126.0" text="SCOREBORED" />
+      <Button fx:id="solomodeButton" layoutX="111.0" layoutY="132.0" mnemonicParsing="false" onAction="#solomodeButtonOnAction" prefHeight="56.0" prefWidth="125.0" text="SOLO MODE" />
+      <Button fx:id="versusmodeButton" layoutX="363.0" layoutY="132.0" mnemonicParsing="false" onAction="#versusmodeButtonOnAction" prefHeight="56.0" prefWidth="126.0" text="VERSUS MODE" />
+      <Button fx:id="scoreboardButton" layoutX="237.0" layoutY="212.0" mnemonicParsing="false" onAction="#scoreboardButtonOnAction" prefHeight="56.0" prefWidth="126.0" text="SCOREBORED" />
       <Button fx:id="settingsButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#settingsButtonOnAction" text="Settings" />
    </children>
 </AnchorPane>

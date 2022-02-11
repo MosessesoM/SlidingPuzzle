@@ -24,9 +24,6 @@ public class User {
     private List<SoloScore> soloScores;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<CoopScore> coopScores;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<VsScore> vsScores;
 
 
@@ -76,14 +73,6 @@ public class User {
 
     public void setSoloScores(List<SoloScore> soloScores) {
         this.soloScores = soloScores;
-    }
-
-    public List<CoopScore> getCoopScores() {
-        return coopScores;
-    }
-
-    public void setCoopScores(List<CoopScore> coopScores) {
-        this.coopScores = coopScores;
     }
 
     public List<VsScore> getVsScores() {

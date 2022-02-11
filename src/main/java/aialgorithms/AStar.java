@@ -1,9 +1,7 @@
 package aialgorithms;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Scanner;
 
 public class AStar implements Algorithm {
 
@@ -21,57 +19,63 @@ public class AStar implements Algorithm {
         availableStates.add(startNode);
     }
 
-    public ArrayList<BoardState> findSolution() throws IOException {
+    public ArrayList<BoardState> findSolution() {
         BoardState present;
-        boolean check=false;
-        int index=-1;
+        int index = -1;
+        ArrayList<BoardState> solution = null;
         while (!availableStates.isEmpty()) {
-            availableStates.sort(new Comparator<BoardState>() {
-                @Override
-                public int compare(BoardState o1, BoardState o2) {
-                    return Integer.compare(o1.getfScore(), o2.getfScore());
-                }
-            });
+            availableStates.sort(Comparator.comparingInt(BoardState::getfScore));
 
             present = availableStates.remove(0);
 
             if (checkFinalState(present)) {
-                ArrayList<BoardState> solution = new ArrayList<>();
-
-                while (present.getParentIndex() != -1) {
-                    solution.add(present);
-                    present = pastStates.get(present.getParentIndex());
-                }
-                solution.add(present);
+                solution = getSolution(present);
                 return solution;
             }
             ArrayList<BoardState> successors = expansion(present);
             pastStates.add(present);
-            for (BoardState successor : successors) {
-                check=false;
-                successor.setgScore(present.getgScore());
-                successor.sethScore();
-                successor.setfScore();
-                successor.setParentIndex(pastStates.indexOf(present));
-                for (BoardState boardState: pastStates){
-                    if (checkIfStateSame(boardState,successor)){
-                        check=true;
-                        index=pastStates.indexOf(boardState);
-                        break;
-                    }
-                }
-                if (check) {
-                    if (pastStates.get(index).getgScore() > successor.getgScore()) {
-                        pastStates.get(index).setgScore(present.getgScore());
-                        pastStates.get(index).setfScore();
-                        availableStates.add(successor);
-                    }
-                } else {
-                    availableStates.add(successor);
+            index = checkPast(present, index, successors);
+        }
+        return solution;
+    }
+
+    private int checkPast(BoardState present, int index, ArrayList<BoardState> successors) {
+        boolean check;
+        for (BoardState successor : successors) {
+            check = false;
+            successor.setgScore(present.getgScore());
+            successor.sethScore();
+            successor.setfScore();
+            successor.setParentIndex(pastStates.indexOf(present));
+            for (BoardState boardState : pastStates) {
+                if (checkIfStateSame(boardState, successor)) {
+                    check = true;
+                    index = pastStates.indexOf(boardState);
+                    break;
                 }
             }
+            if (check) {
+                if (pastStates.get(index).getgScore() > successor.getgScore()) {
+                    pastStates.get(index).setgScore(present.getgScore());
+                    pastStates.get(index).setfScore();
+                    availableStates.add(successor);
+                }
+            } else {
+                availableStates.add(successor);
+            }
         }
-        return null;
+        return index;
+    }
+
+    private ArrayList<BoardState> getSolution(BoardState present) {
+        ArrayList<BoardState> solution = new ArrayList<>();
+
+        while (present.getParentIndex() != -1) {
+            solution.add(present);
+            present = pastStates.get(present.getParentIndex());
+        }
+        solution.add(present);
+        return solution;
     }
 
     public ArrayList<BoardState> expansion(BoardState present) {
@@ -129,7 +133,6 @@ public class AStar implements Algorithm {
     }
 
     public boolean checkFinalState(BoardState n) {
-        int[][] end = {{1, 2, 3}, {4, 5, 6}, {7, 8, -1}};
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (end[i][j] != n.getState()[i][j]) {
@@ -140,12 +143,12 @@ public class AStar implements Algorithm {
         return true;
     }
 
-    private boolean checkIfStateSame(BoardState a, BoardState b){
-        boolean check =true;
-        for (int i=0;i<3;i++){
-            for (int j=0;j<3;j++){
-                if (a.getState()[i][j]!=b.getState()[i][j]){
-                    check=false;
+    private boolean checkIfStateSame(BoardState a, BoardState b) {
+        boolean check = true;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (a.getState()[i][j] != b.getState()[i][j]) {
+                    check = false;
                 }
             }
         }

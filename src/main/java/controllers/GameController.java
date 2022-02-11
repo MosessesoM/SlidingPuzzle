@@ -2,10 +2,10 @@ package controllers;
 
 import java.io.IOException;
 
-interface GameController{
-    public int getScore();
+interface GameController {
+    int getScore();
 
-    public void randomStart(int moves);
+    void randomStart(int moves);
 
-    public void win() throws IOException;
+    void win(String playerName) throws IOException;
 }

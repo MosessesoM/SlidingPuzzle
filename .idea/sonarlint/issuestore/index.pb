@@ -25,14 +25,6 @@ Z
 .src/main/java/controllers/LoginController.java,e\7\e7c3324293af4a0146a78e5c2cbb4cec9472ab7f
 ]
 -src/main/java/controllers/MenuController.java,3\1\31c428538f917ebfbf90d8becdc23b30786aa3c0
-Z
-*src/main/resources/views/confirmation.fxml,f\5\f55fd2a5c4473e9f2ccfd6344b14a569e0151607
-e
-5src/main/java/controllers/ConfirmationController.java,4\c\4cd5b5702bb06496db726deb1cdd944a89aefdc4
-R
-"target/classes/views/coopgame.fxml,5\e\5eec4de7c9f3d8e8b23589f11216fde7ccbb6f0c
-a
-1src/main/java/controllers/CoopGameController.java,8\1\8128e74398211efdbfea34a38f1e43f8171cf08e
 O
 target/classes/views/login.fxml,f\c\fcf09aa5a0103d5cc505aa31989dcc01a8de2bce
 N
@@ -53,8 +45,6 @@ i
 9.idea/libraries/Maven__org_openjfx_javafx_graphics_13.xml,0\7\070486b749ceedec71f930f6e3ffa7582812b693
 m
 =.idea/libraries/Maven__org_openjfx_javafx_graphics_win_13.xml,9\7\975a2a5865521c1c51b660cc92bb8adc542df446
-R
-"src/main/resources/views/menu.fxml,0\9\0984d11a0e6b26c5b5ae3007a93385ef00eca16a
 N
 target/classes/views/menu.fxml,7\3\73e11537e250c4468d7889dcb4230f917a019110
 R
@@ -75,8 +65,6 @@ P
  target/classes/views/vsgame.fxml,f\5\f5a4edbaf9b884f61e034cc9840e938e9436abfd
 _
 /src/main/java/controllers/VsGameController.java,b\6\b6939fe0f13b5e0dfe3ab82f9267929957301910
-V
-&target/classes/views/confirmation.fxml,1\b\1b1ce159ce8db1c6dfe12966723f92060ed94599
 U
 %src/main/java/database/CoopScore.java,1\4\1423200bfffa8e54cbaef1bfa88ec3337eebebd0
 \
@@ -151,13 +139,21 @@ g
 7src/main/java/controllers/VsGameSettingsController.java,8\e\8e5e23eaaf4b02e3a07882957ff7f6f2cfd4bae1
 \
 ,src/main/java/controllers/WinController.java,2\9\291e9a4a484171cc5292f455d4e2c3beaea227aa
-]
--src/main/java/controllers/LoseController.java,2\6\260f01bf51ec55f2610de80ce3b309628ef94510
 i
 9src/main/java/controllers/SoloGameSettingsController.java,d\0\d0e140b9796150998eabf2eda2e072e725adf79d
-N
-target/classes/views/lose.fxml,c\6\c6d6efcc0ff7bb1dc2c4708710fc2f1404e02bb5
 X
 (target/classes/views/vsgamesettings.fxml,b\1\b1628738d4c28f1a68b5b0655cef4db8de060734
 M
 target/classes/views/win.fxml,c\d\cd4b3b89556435b6ee641d33e0c13f5e146e58b4
+^
+.src/main/resources/views/sologamesettings.fxml,e\e\eed98c00e606e2eb695b2dad8a6e9a17a1d5af31
+Z
+*target/classes/views/sologamesettings.fxml,5\e\5e245cce120f8e5420a739bdacd39aae2a160302
+\
+,src/main/resources/views/vsgamesettings.fxml,2\e\2efab81eee8b51c0eaff0f0a4336efba68629e8c
+^
+.src/test/java/aialgorithms/BoardStateTest.java,0\3\036950d0803b6edac283769942bbb94f3133175f
+Y
+)src/test/java/aialgorithms/AStarTest.java,f\0\f00ce6f8b4a5c1632bda2773a703fa2f8aedb54b
+[
++src/test/java/aialgorithms/GeneticTest.java,7\6\7663eaf4d41e439a3be3a3fd3566c3512d75f6db

@@ -36,7 +36,7 @@ public class SoloGameSettingsController extends Controller {
     public Label warningLabel;
 
     @FXML
-    void initialize(){
+    void initialize() {
 
     }
 
@@ -51,22 +51,22 @@ public class SoloGameSettingsController extends Controller {
 
         FXMLLoader loader = new FXMLLoader();
 
-        int moves =0;
+        int moves = 0;
 
-            switch (levelMenuButton.getText()) {
-                case "Level 1":
-                    moves = 10;
-                    break;
-                case "Level 2":
-                    moves = 20;
-                    break;
-                case "Level 3":
-                    moves = 30;
-                    break;
-                default:
-                    break;
-            }
-        if (moves!=0){
+        switch (levelMenuButton.getText()) {
+            case "Level 1":
+                moves = 10;
+                break;
+            case "Level 2":
+                moves = 20;
+                break;
+            case "Level 3":
+                moves = 30;
+                break;
+            default:
+                break;
+        }
+        if (moves != 0) {
             loader.setLocation(this.getClass().getResource("/views/sologame.fxml"));
             AnchorPane anchorpaneSolo = loader.load();
             SoloGameController soloGameController = loader.getController();

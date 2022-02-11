@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import net.bytebuddy.agent.builder.AgentBuilder;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,9 +25,6 @@ public class RegisterController extends Controller {
 
     @FXML
     public Label nameLabel;
-
-    @FXML
-    public Label emailLabel;
 
     @FXML
     public Label passwordLabel;
@@ -46,16 +42,13 @@ public class RegisterController extends Controller {
     public TextField nameTextField;
 
     @FXML
-    public TextField emailTextField;
-
-    @FXML
     public Button settingButton;
 
     @FXML
     public Label warningLabel;
 
     @FXML
-    void initialize(){
+    void initialize() {
 
     }
 
@@ -68,19 +61,19 @@ public class RegisterController extends Controller {
 
         List<User> users = databaseGetters.getUsers();
 
-        if (nameTextField.getText().equals("") || emailTextField.getText().equals("") || passwordTextField.getText().equals("") || confirmpasswordTextField.getText().equals("")){
+        if (nameTextField.getText().equals("") || passwordTextField.getText().equals("") || confirmpasswordTextField.getText().equals("")) {
             warningLabel.setText("Fill in all fields");
         } else {
             for (User u : users) {
-                if (u.getName().equals(nameTextField.getText()) || u.getEmail().equals(passwordLabel.getText())){
-                    warningLabel.setText("Account with this data already exists");
-                    check=true;
+                if (u.getName().equals(nameTextField.getText())) {
+                    warningLabel.setText("Account with this name already exists");
+                    check = true;
                     break;
                 }
             }
-            if (!check){
-                if (passwordTextField.getText().equals(confirmpasswordTextField.getText())){
-                    databaseSetters.setUser(nameTextField.getText(),passwordTextField.getText(),emailTextField.getText());
+            if (!check) {
+                if (passwordTextField.getText().equals(confirmpasswordTextField.getText())) {
+                    databaseSetters.setUser(nameTextField.getText(), passwordTextField.getText(), "email");
 
                     FXMLLoader loader = new FXMLLoader();
                     loader.setLocation(this.getClass().getResource("/views/login.fxml"));
@@ -116,10 +109,6 @@ public class RegisterController extends Controller {
 
     @FXML
     public void nameTextFieldOnAction(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void emailTextFieldOnAction(ActionEvent actionEvent) {
     }
 
     @FXML

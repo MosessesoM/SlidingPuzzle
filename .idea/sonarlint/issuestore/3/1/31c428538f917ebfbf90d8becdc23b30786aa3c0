@@ -1,9 +1,3 @@
 
-x
-java:S1192$"[Define a constant instead of duplicating this literal "/views/vsgamesettings.fxml" 3 times.(µû·¯8Í‹À»è/
-ƒ
-java:S4144,"fUpdate this method so that its implementation is not identical to "solomodeButtonOnAction" on line 34.(–û¼Ä8èŒ£¾é/
-ˆ
-java:S41446"fUpdate this method so that its implementation is not identical to "solomodeButtonOnAction" on line 34.(§Ş¡şÿÿÿÿ8ûÆ£¾é/
 £
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷‹¾†ÿÿÿÿÿ8¥Îöí¤/
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷‹¾†ÿÿÿÿÿ8¥Îöí¤/

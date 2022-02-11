@@ -1,3 +1,8 @@
 
-X	java:S125"<This block of commented-out lines of code should be removed.(Ÿ©ˆÂ8ÂìèÔÇ/
-X	java:S125&"<This block of commented-out lines of code should be removed.(èßßÇ8—ùõµÄ/
+X	java:S125*"<This block of commented-out lines of code should be removed.(èßßÇ8—ùõµÄ/
+X	java:S125K"<This block of commented-out lines of code should be removed.(èßßÇ8µ¬³Ùê/
+c
+java:S1128"GRemove this unused import 'javax.persistence.criteria.CriteriaBuilder'.(É¿F8ûÕï¢í/
+X	java:S125"<This block of commented-out lines of code should be removed.(Ÿ©ˆÂ8ÂìèÔÇ/
+k
+java:S1192"IDefine a constant instead of duplicating this literal "manager1" 3 times.(ÛéŞ²üÿÿÿÿ8Å¸²Ùê/

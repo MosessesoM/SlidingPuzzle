@@ -5,18 +5,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegisterController">
    <children>
-      <AnchorPane layoutX="178.0" layoutY="69.0" prefHeight="262.0" prefWidth="243.0" style="-fx-border-color: black;">
+      <AnchorPane layoutX="178.0" layoutY="94.0" prefHeight="187.0" prefWidth="243.0" style="-fx-border-color: black;">
          <children>
-            <Button fx:id="registerButton" layoutX="91.0" layoutY="188.0" mnemonicParsing="false" onAction="#registerButtonOnAction" text="Register" />
-            <Button fx:id="backButton" layoutX="101.0" layoutY="222.0" mnemonicParsing="false" onAction="#backButtonOnAction" text="Back" />
+            <Button fx:id="registerButton" layoutX="92.0" layoutY="149.0" mnemonicParsing="false" onAction="#registerButtonOnAction" text="Register" />
+            <Button fx:id="backButton" layoutX="102.0" layoutY="183.0" mnemonicParsing="false" onAction="#backButtonOnAction" text="Back" />
             <Label fx:id="nameLabel" layoutX="22.0" layoutY="43.0" text="Name" />
-            <Label fx:id="emailLabel" layoutX="21.0" layoutY="79.0" text="E-mail" />
-            <Label fx:id="passwordLabel" layoutX="13.0" layoutY="115.0" prefHeight="18.0" prefWidth="50.0" text="Password" />
-            <Label fx:id="confirmpasswordLabel" layoutX="14.0" layoutY="131.0" prefHeight="58.0" prefWidth="59.0" text="Confirm Password" wrapText="true" />
-            <PasswordField fx:id="passwordTextField" layoutX="74.0" layoutY="112.0" onAction="#passwordTextFieldOnAction" />
-            <PasswordField fx:id="confirmpasswordTextField" layoutX="74.0" layoutY="148.0" onAction="#confirmpasswordTextFieldOnAction" />
+            <Label fx:id="passwordLabel" layoutX="14.0" layoutY="76.0" prefHeight="18.0" prefWidth="50.0" text="Password" />
+            <Label fx:id="confirmpasswordLabel" layoutX="15.0" layoutY="92.0" prefHeight="58.0" prefWidth="59.0" text="Confirm Password" wrapText="true" />
+            <PasswordField fx:id="passwordTextField" layoutX="75.0" layoutY="73.0" onAction="#passwordTextFieldOnAction" />
+            <PasswordField fx:id="confirmpasswordTextField" layoutX="75.0" layoutY="109.0" onAction="#confirmpasswordTextFieldOnAction" />
             <TextField fx:id="nameTextField" layoutX="74.0" layoutY="39.0" onAction="#nameTextFieldOnAction" />
-            <TextField fx:id="emailTextField" layoutX="74.0" layoutY="75.0" onAction="#emailTextFieldOnAction" />
             <Label fx:id="warningLabel" layoutX="24.0" layoutY="14.0" textFill="RED" />
          </children>
       </AnchorPane>

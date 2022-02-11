@@ -9,9 +9,11 @@ public class BoardState {
 
     private int[][] state = new int[3][3];
 
+    private int[][] end = {{1, 2, 3}, {4, 5, 6}, {7, 8, -1}};
+
     private int parentIndex;
 
-    private int fitnessFunction =0;
+    private int fitnessFunction = 0;
 
     public BoardState(int[][] state) {
         setState(state);
@@ -30,10 +32,10 @@ public class BoardState {
     }
 
     public void sethScore() {
-        int index=1;
+        int index = 1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (state[i][j] == index || (state[i][j]==-1 && index==9)) {
+                if (state[i][j] == index || (state[i][j] == -1 && index == 9)) {
                     hScore--;
                 }
                 index++;
@@ -71,18 +73,18 @@ public class BoardState {
         return fitnessFunction;
     }
 
-    public void setFitnessFunction(Integer parentFitnessScore) {
-        int index=1;
+    public void setFitnessFunction(Integer cloneWeight) {
+        fitnessFunction+=cloneWeight;
         for (int i=0;i<3;i++){
             for (int j=0;j<3;j++){
-                if (state[i][j]==-1){
-                    fitnessFunction +=Math.abs(9-index);
-                } else {
-                    fitnessFunction +=Math.abs(state[i][j]-index);
+                for (int k=0;k<3;k++){
+                    for (int l=0;l<3;l++){
+                        if (state[i][j]==end[k][l]){
+                            fitnessFunction+=Math.abs(i-k)+Math.abs(j-l);
+                        }
+                    }
                 }
-                index++;
             }
         }
-        fitnessFunction+=parentFitnessScore;
     }
 }

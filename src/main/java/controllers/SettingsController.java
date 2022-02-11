@@ -22,7 +22,7 @@ public class SettingsController extends Controller {
     public Button exitButton;
 
     @FXML
-    void initialize(){
+    void initialize() {
 
     }
 
