@@ -17,7 +17,6 @@ public class DatabaseSetters {
 //        user.setCoopScores(null);
 //        user.setVsScores(null);
         user.setName(name);
-        user.setEmail(email);
         user.setPassword(password);
 
         entityManager.getTransaction().begin();

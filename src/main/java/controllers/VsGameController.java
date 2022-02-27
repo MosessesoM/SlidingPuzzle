@@ -137,9 +137,6 @@ public class VsGameController extends Controller implements GameController {
                             time++;
 
                             if (finalSolution == null) {
-                                numberofmoves++;
-                                numberofmovesTextFIeld.setText(String.valueOf(numberofmoves));
-                                buttonsinplaceTextField.setText("X");
                                 if (endCheck(gridPane1)) {
                                     score = time + numberofmoves;
                                     DatabaseSetters databaseSetters = new DatabaseSetters();
@@ -167,6 +164,9 @@ public class VsGameController extends Controller implements GameController {
                                 if (solution2.size() > 0) {
                                     setBoard(solution2.remove(solution2.size() - 1).getState(), gridPane2);
                                 }
+                                numberofmoves++;
+                                numberofmovesTextFIeld.setText(String.valueOf(numberofmoves));
+                                buttonsinplaceTextField.setText("X");
                             }
                         }
                 ));

@@ -47,6 +47,8 @@ public class Genetic implements Algorithm {
     }
 
     private void setPopulation() {
+        currentPopulation.sort(Comparator.comparingInt(BoardState::getFitnessFunction));
+
         if (currentPopulation.size() > 100) {
             currentPopulation.subList(100, currentPopulation.size()).clear();
         }
@@ -55,6 +57,8 @@ public class Genetic implements Algorithm {
         for (BoardState boardState : currentPopulation) {
             pom.addAll(expansion(boardState));
         }
+
+        pom.addAll(currentPopulation);
 
         ArrayList<BoardState> newPopulation = new ArrayList<>(0);
         while (pom.size() > 1) {
@@ -68,8 +72,6 @@ public class Genetic implements Algorithm {
 
         currentPopulation.clear();
         currentPopulation.addAll(pom);
-
-        currentPopulation.sort(Comparator.comparingInt(BoardState::getFitnessFunction));
     }
 
     @Override

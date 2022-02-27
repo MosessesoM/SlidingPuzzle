@@ -1,26 +1,26 @@
 
-v
-java:S3776ç"SRefactor this method to reduce its Cognitive Complexity from 141 to the 15 allowed.(ìÙı”úÿÿÿÿ8¨Ò¤î/
-c
-java:S3252¦"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(¯¥ÕÙ8ÑàÏ¤î/
-D	java:S131ñ""Add a default case to this switch.(ñ¦·‚şÿÿÿÿ8¨Ò¤î/
+|
+java:S1171»"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8Ã™Äò/
 p
-java:S3776‘"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(ûšø8ÑàÏ¤î/
-O
-java:S3599³",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8ÑàÏ¤î/
-|
-java:S1171´"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ÑàÏ¤î/
-S
-java:S1128"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜8ïéšî/
-|
-java:S3012ÿ"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(€ê»Ìşÿÿÿÿ8ÑàÏ¤î/
-j
-java:S2259º"GA "NullPointerException" could be thrown; "solution2" is nullable here.(”…¿úüÿÿÿÿ8¨Ò¤î/
+java:S3776ƒ"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(µ…›ã8ÑàÏ¤î/
 ;
-java:S2119±"Save and re-use this "Random".(¼İÅf8ÑàÏ¤î/
-p
-java:S3776€"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(µ…›ã8ÑàÏ¤î/
+java:S2119¸"Save and re-use this "Random".(¼İÅf8Ã™Äò/
+j
+java:S2259Ã"GA "NullPointerException" could be thrown; "solution2" is nullable here.(”…¿úüÿÿÿÿ8Ã™Äò/
+c
+java:S3252­"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(¯¥ÕÙ8Ã™Äò/
 u
-java:S3776®"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(ìÓëŠøÿÿÿÿ8ÑàÏ¤î/
-V	java:S106¾"9Replace this use of System.out or System.err by a logger.(‰ˆõ—8˜óÑ¤î/
-U	java:S106¿"9Replace this use of System.out or System.err by a logger.(°±ËN8¨Ò¤î/
+java:S3776µ"RRefactor this method to reduce its Cognitive Complexity from 46 to the 15 allowed.(ìÓëŠøÿÿÿÿ8Ã™Äò/
+O
+java:S3599º",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8Â…Äò/
+v
+java:S3776ğ"SRefactor this method to reduce its Cognitive Complexity from 141 to the 15 allowed.(ìÙı”úÿÿÿÿ8Ã™Äò/
+\
+java:S1155–">Use isEmpty() to check whether the collection is empty or not.(Ä×ä¸8Â…Äò/
+|
+java:S3012†"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(€ê»Ìşÿÿÿÿ8Ã™Äò/
+p
+java:S3776š"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(ûšø8Ã™Äò/
+D	java:S131ú""Add a default case to this switch.(ñ¦·‚şÿÿÿÿ8Ã™Äò/
+a
+java:S1155¤">Use isEmpty() to check whether the collection is empty or not.(ÙÎ«ïúÿÿÿÿ8Â…Äò/

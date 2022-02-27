@@ -1,6 +1,0 @@
-
-x	java:S116"WRename this field "CoopScore_Id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚©ôÁøÿÿÿÿ8ßÓ„†Ä/
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÂıÿÿÿÿ8İ°ƒ†Ä/
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼œÒ«ÿÿÿÿÿ8İ°ƒ†Ä/
-l	java:S116"PRename this field "Score" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÇÙØı8İ°ƒ†Ä/
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÂıÿÿÿÿ8İ°ƒ†Ä/

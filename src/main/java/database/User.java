@@ -15,8 +15,6 @@ public class User {
     private boolean Permission;
     @Column(columnDefinition = "VARCHAR(30) NOT NULL")
     private String Name;
-    @Column(columnDefinition = "VARCHAR(30) NOT NULL")
-    private String Email;
     @Column(columnDefinition = "VARCHAR(30) NOT NUL")
     private String Password;
 
@@ -49,14 +47,6 @@ public class User {
 
     public void setName(String name) {
         Name = name;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
     }
 
     public String getPassword() {

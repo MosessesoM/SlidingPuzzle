@@ -1,19 +1,19 @@
 
-Q
-java:S3740)"/Provide the parametrized type for this generic.(÷±ùÿÿÿÿ8¸ì·£í/
-L
-java:S3740"/Provide the parametrized type for this generic.(Ë’÷÷8Å–Œ§/
-L
-java:S3740&"/Provide the parametrized type for this generic.(çÕ¼8Ïí£í/
-Q
-java:S3740"/Provide the parametrized type for this generic.(ô´Åûÿÿÿÿ8¶¬Œ§/
-Q
-java:S3740#"/Provide the parametrized type for this generic.(†ÙÏŠÿÿÿÿÿ8Ïí£í/
-c
-java:S1128"GRemove this unused import 'javax.persistence.criteria.CriteriaBuilder'.(É¿F8Çº—£í/
 L
 java:S3740"/Provide the parametrized type for this generic.(„åıº8šŠ‚Ûê/
 Q
 java:S3740 "/Provide the parametrized type for this generic.(úşïùÿÿÿÿ8“¿Œ§/
 €
 java:S1450."^Remove the "databaseGetters" field and declare it as a local variable in the relevant methods.(¿ø¨§ÿÿÿÿÿ8®½ î/
+Q
+java:S3740)"/Provide the parametrized type for this generic.(÷±ùÿÿÿÿ8¸ì·£í/
+Q
+java:S3740#"/Provide the parametrized type for this generic.(†ÙÏŠÿÿÿÿÿ8Ïí£í/
+L
+java:S3740&"/Provide the parametrized type for this generic.(çÕ¼8Ïí£í/
+L
+java:S3740"/Provide the parametrized type for this generic.(Ë’÷÷8Å–Œ§/
+Q
+java:S3740"/Provide the parametrized type for this generic.(ô´Åûÿÿÿÿ8¶¬Œ§/
+c
+java:S1128"GRemove this unused import 'javax.persistence.criteria.CriteriaBuilder'.(É¿F8Çº—£í/

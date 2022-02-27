@@ -1,21 +1,21 @@
 
-|
-java:S3012È"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(€ê»Ìşÿÿÿÿ8„¹œ½é/
 p
 java:S3776Ğ"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(ûšø8„¹œ½é/
-N
-java:S3599|",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8„¹œ½é/
-b
-java:S3252o"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Ò™ˆû8„¹œ½é/
-O
-java:S1135w"2Complete the task associated to this TODO comment.(£èÉ«8„¹œ½é/
+t
+java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(ìÓëŠøÿÿÿÿ8„¹œ½é/
 E
 java:S1604g"(Make this anonymous inner class a lambda(ÈŸİ8„¹œ½é/
+|
+java:S3012È"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(€ê»Ìşÿÿÿÿ8„¹œ½é/
+O
+java:S1135w"2Complete the task associated to this TODO comment.(£èÉ«8„¹œ½é/
 
 java:S1130T"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¶’Ö®ùÿÿÿÿ8„¹œ½é/
+b
+java:S3252o"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Ò™ˆû8„¹œ½é/
 :
 java:S2119z"Save and re-use this "Random".(¼İÅf8„¹œ½é/
 {
 java:S1171}"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8„¹œ½é/
-t
-java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 45 to the 15 allowed.(ìÓëŠøÿÿÿÿ8„¹œ½é/
+N
+java:S3599|",Use another way to initialize this instance.(ğÃ™úÿÿÿÿ8„¹œ½é/
